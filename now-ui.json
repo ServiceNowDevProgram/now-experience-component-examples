@@ -1,0 +1,53 @@
+{
+	"components": {
+	    "now-customer-360": {
+			"innerComponents": [
+				"now-avatar",
+				"now-icon",
+				"now-label-value-stacked"
+			],
+			"properties": [
+				{
+				  "name": "table",
+				  "label": "table",
+				  "description": "Name of the table to post the new journal entry to",
+				  "readOnly": false,
+				  "fieldType": "table_name",
+				  "required": true,
+				  "defaultValue": "incident",
+				  "typeMetadata": {}
+				},
+				{
+				  "name": "sysId",
+				  "label": "sysId",
+				  "description": "The unique identifier for the record",
+				  "readOnly": false,
+				  "fieldType": "string",
+				  "required": true,
+				  "defaultValue": "85071a1347c12200e0ef563dbb9a71c1",
+				  "typeMetadata": {}
+				}
+			]
+		},
+		"sn-todo-list": {
+			"uiBuilder": {
+				"label": "To-Do List",
+				"icon": "list-fill",
+				"description": "Logged in users can manage their to-dos",
+				"category": "primitives",
+				"associatedTypes": [
+					"global.core"
+				]
+			},
+	        "innerComponents": [
+				"now-button",
+				"now-alert",
+				"now-toggle",
+				"sn-todo-list-item",
+				"sn-modal"
+			]
+		}	
+	},
+	"scopeName": "x_now_experience_component_examples"
+}
+

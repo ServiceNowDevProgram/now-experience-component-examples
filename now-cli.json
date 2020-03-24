@@ -1,0 +1,23 @@
+{
+  "development": {
+    "proxy": {
+      "origin": "https://k8s0051006-node1.thunder.lab3.service-now.com/",
+      "headers": {
+        "Authorization": "Basic YWRtaW46YWRtaW4="
+      },
+      "proxies": ["/api"]
+    },
+    "test": {
+        "unit": [
+            "@servicenow/cli-jest-plugin"
+        ]
+    }
+  },
+  "styles": {
+      "themes": [{
+        "module": "@servicenow/sass-theme",
+        "main": ["theme.scss"],
+        "copyFiles": ["type/*", "*.scss"]
+      }]
+  }
+}

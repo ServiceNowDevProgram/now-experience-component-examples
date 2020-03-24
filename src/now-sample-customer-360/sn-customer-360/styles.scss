@@ -1,0 +1,53 @@
+@import '@servicenow/sass-kit/host';
+
+.customer360{
+    display: block;
+    height: 250px;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #CDCDCD;
+    box-shadow: 0px 0px 5px rgb(0,0,0);
+
+    .no-data-available, .loading-data{
+        text-align: center;
+        display: block;
+    
+        label{
+            font-style: italic;
+        }
+    }
+
+    .loading-data{
+        padding: 80px 0px;
+    }
+
+    .no-data-available{
+        padding: 70px 0px;
+    }
+
+    .customer360-caller{
+        display: grid;
+        grid-template-columns: 90px auto;
+        grid-row-gap: 6px;
+
+        .customer360-caller-header{
+            border-bottom: 2px solid #CDCDCD;
+            padding: 5px;
+            color : rgb(95, 105, 106);
+            font-weight: nornal;
+            font-size: 24px;
+            grid-column: 1 / 3;
+        }
+
+        .customer360-caller-icon{
+            grid-row: 2 / 5;
+        }
+        
+        .customer360-caller-username{
+            color : rgb(95, 105, 106);
+            font-weight: nornal;
+            font-size: 24px;
+            margin-top: 15px;
+        }
+    }
+}

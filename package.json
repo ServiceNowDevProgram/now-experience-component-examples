@@ -1,0 +1,38 @@
+{
+    "name": "@servicenow/now-customer-360",
+    "version": "0.0.1",
+    "private": false,
+    "description": "Custome element to show Customer360",
+    "keywords": [
+        "ServiceNow",
+        "Now Experience UI Component",
+        "@servicenow/sn-customer360-view"
+    ],
+    "readme": "./README.md",
+    "engines": {
+        "node": ">=8.6.0",
+        "npm": ">=5.3.0"
+    },
+    "module": "src/index.js",
+    "dependencies": {
+        "@servicenow/cli-archetype": "orlando",
+        "@servicenow/cli-component-archetype": "orlando",
+        "@servicenow/now-avatar": "orlando",
+        "@servicenow/now-icon": "orlando",
+        "@servicenow/now-label-value": "orlando",
+        "@servicenow/sass-kit": "orlando",
+        "@servicenow/sass-theme": "orlando",
+        "@servicenow/ui-core": "orlando",
+        "@servicenow/ui-effect-http": "orlando",
+        "@servicenow/ui-renderer-snabbdom": "orlando",
+        "@servicenow/now-button": "orlando",
+        "@servicenow/now-alert": "orlando",
+        "@servicenow/now-toggle": "orlando",
+        "@servicenow/ui-effect-graphql": "orlando",
+        "sn-translate": "orlando"
+    },
+    "devDependencies": {
+        "@servicenow/cli-archetype-dev": "orlando",
+        "@servicenow/cli-component-archetype-dev": "orlando"
+    }
+}

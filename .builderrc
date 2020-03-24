@@ -1,0 +1,4 @@
+---
+archetypes:
+  - "@servicenow/cli-archetype"
+  - "@servicenow/cli-component-archetype"
