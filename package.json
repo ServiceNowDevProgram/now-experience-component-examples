@@ -1,12 +1,12 @@
 {
-    "name": "@servicenow/now-customer-360",
+    "name": "@servicenow/now-exeperience-sample-components",
     "version": "0.0.1",
     "private": false,
-    "description": "Custome element to show Customer360",
+    "description": "Custom elements to show sample Customer360 , To-Do List & Agent Assist",
     "keywords": [
         "ServiceNow",
         "Now Experience UI Component",
-        "@servicenow/sn-customer360-view"
+        "@servicenow/now-exeperience-sample-components"
     ],
     "readme": "./README.md",
     "engines": {

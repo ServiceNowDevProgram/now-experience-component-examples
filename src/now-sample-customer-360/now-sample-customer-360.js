@@ -9,7 +9,7 @@ import view from './view/view';
 import actionHandlers from './action-handlers';
 
 
-createCustomElement('now-customer-360', {
+createCustomElement('now-sample-customer-360', {
 	renderer: {type: snabbdom},
 	view,
 	properties : {

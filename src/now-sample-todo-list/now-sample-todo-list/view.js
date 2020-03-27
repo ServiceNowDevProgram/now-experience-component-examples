@@ -1,7 +1,7 @@
 import '@servicenow/now-button';
 import '@servicenow/now-alert';
 
-import '../todo-list-item';
+import '../now-sample-todo-list-item';
 import '../modal';
 
 import {
@@ -50,7 +50,7 @@ export default (state, {dispatch, updateState}) => {
 
 		return (
 			<div className="todo-list active-todos">
-				{ activeToDos.map(todo => <sn-todo-list-item itemLabel={todo.short_description} itemId={todo.sys_id} itemCompleted={false} />) }
+				{ activeToDos.map(todo => <now-sample-todo-list-item itemLabel={todo.short_description} itemId={todo.sys_id} itemCompleted={false} />) }
 			</div>
 		);
 	};
@@ -67,7 +67,7 @@ export default (state, {dispatch, updateState}) => {
 				{
 					showingCompletedItems ? (
 						<div className="todo-list completed-todos">
-							{ completedToDos.map(todo => <sn-todo-list-item itemLabel={todo.short_description} itemId={todo.sys_id} itemCompleted={true} />) }
+							{ completedToDos.map(todo => <now-sample-todo-list-item itemLabel={todo.short_description} itemId={todo.sys_id} itemCompleted={true} />) }
 						</div>
 					) : null
 				}

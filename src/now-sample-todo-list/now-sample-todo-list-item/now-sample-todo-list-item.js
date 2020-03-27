@@ -5,7 +5,7 @@ import view from './view';
 import styles from './list-item.scss';
 import actionHandlers from './action-handlers';
 
-createCustomElement('sn-todo-list-item', {
+createCustomElement('now-sample-todo-list-item', {
 	renderer: {type: snabbdom},
 	view,
 	styles,

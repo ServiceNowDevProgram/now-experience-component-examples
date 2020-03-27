@@ -1,6 +1,6 @@
 {
 	"components": {
-	    "now-customer-360": {
+	    "now-sample-customer-360": {
 			"innerComponents": [
 				"now-avatar",
 				"now-icon",
@@ -29,7 +29,7 @@
 				}
 			]
 		},
-		"sn-todo-list": {
+		"now-sample-todo-list" : {
 			"uiBuilder": {
 				"label": "To-Do List",
 				"icon": "list-fill",
@@ -48,6 +48,6 @@
 			]
 		}	
 	},
-	"scopeName": "x_now_exp_comp"
+	"scopeName": "x_now_smpl_ex_cmp"
 }
 

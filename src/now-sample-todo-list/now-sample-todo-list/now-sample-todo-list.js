@@ -6,7 +6,7 @@ import styles from './styles.scss';
 import actionHandlers from './action-handlers';
 import { TRUE, FALSE } from '../constants';
 
-createCustomElement('sn-todo-list', {
+createCustomElement('now-sample-todo-list', {
 	renderer: {type: snabbdom},
 	view,
 	styles,
