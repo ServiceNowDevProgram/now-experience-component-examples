@@ -1,5 +1,11 @@
 {
 	"components": {
+		"now-sample-agent-assist" : {
+			"innerComponents": [
+				"now-icon",
+				"now-loader"
+			]
+		},
 	    "now-sample-customer-360": {
 			"innerComponents": [
 				"now-avatar",

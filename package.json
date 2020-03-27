@@ -23,6 +23,7 @@
         "@servicenow/sass-kit": "orlando",
         "@servicenow/sass-theme": "orlando",
         "@servicenow/ui-core": "orlando",
+        "@servicenow/now-loader": "orlando",
         "@servicenow/ui-effect-http": "orlando",
         "@servicenow/ui-renderer-snabbdom": "orlando",
         "@servicenow/now-button": "orlando",
@@ -34,5 +35,8 @@
     "devDependencies": {
         "@servicenow/cli-archetype-dev": "orlando",
         "@servicenow/cli-component-archetype-dev": "orlando"
+    },
+    "scripts": {
+        "start:agent-assist": "now-cli  develop -- --entry example/agentassist.js --open"
     }
 }

@@ -1,0 +1,55 @@
+@import '@servicenow/sass-kit/host';
+
+.search-item{
+    border-radius: 0.125rem;
+    border-width: 1px;
+    margin: 5px 0px;
+    border-style: solid;
+    border-color: RGB(var(--now-color--neutral-9,99,114,116));
+    padding: 10px;
+    
+    .search-item-header{
+        display: grid;
+        grid-template-columns: 25px auto;
+    }
+
+    .search-item-header-text{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+        font-weight: 400;
+        position: relative;
+        overflow: hidden;
+        font-size: 0.75rem;
+        color: RGB(var(--now-color--neutral-9,99,114,116));
+        font-family: var(--now-font-family,"Source Sans Pro","Helvetica Neue",helvetica,arial,sans-serif);
+    }
+
+    .search-item-title{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 160px;
+        display: block;
+        color: RGB(var(--now-color--text-secondary,66,80,81));
+        font-size: 1rem;
+        margin: 10px 0px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .search-item-content{
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: normal;
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+
+        color: RGB(var(--now-color--neutral-9,99,114,116));
+        font-size: 0.75rem;
+        width: 200px;
+        font-family: var(--now-font-family,"Source Sans Pro","Helvetica Neue",helvetica,arial,sans-serif);
+    }
+}
