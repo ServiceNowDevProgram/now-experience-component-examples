@@ -7,24 +7,22 @@ import { NO_DATA , CALLER } from '../constants';
 export const getCustomer360View = (result , locationResult , companyResult) => {
 	let dataFormat = getCalleData(result, locationResult , companyResult);
 	return (
-		<div className="customer360">
-			<div className="customer360-caller">
-					<span className="customer360-caller-header">
-						<span>{CALLER}</span>
-					</span>
-					<span className="customer360-caller-icon">
-                        <now-avatar size="lg" user-name={ dataFormat.photo == "" ? dataFormat.name : ""}  image-src={ dataFormat.photo != "" ? "/"+dataFormat.photo+".iix?t=small" : ""}></now-avatar>
-					</span>
-					<span className="customer360-caller-username">
-						{dataFormat.name}
-					</span>
-					<span className="customer360-caller-username">
-						<now-label-value-stacked align="horizontal-equal" item-min-width="100px" delimiter="," items={dataFormat.itemOne} size="md" truncated></now-label-value-stacked>
-					</span>
-					<span className="customer360-caller-username">
-						<now-label-value-stacked align="horizontal-equal" item-min-width="100px" delimiter="," items={dataFormat.itemTwo} size="md" truncated></now-label-value-stacked>
-					</span>
-			</div>
+		<div className="customer360-caller">
+			<span className="customer360-caller-header">
+				<span>{CALLER}</span>
+			</span>
+			<span className="customer360-caller-icon">
+				<now-avatar size="lg" user-name={ dataFormat.photo == "" ? dataFormat.name : ""}  image-src={ dataFormat.photo != "" ? "/"+dataFormat.photo+".iix?t=small" : ""}></now-avatar>
+			</span>
+			<span className="customer360-caller-username">
+				{dataFormat.name}
+			</span>
+			<span className="customer360-caller-username">
+				<now-label-value-stacked align="horizontal-equal" xitem-min-width="100px" delimiter="," items={dataFormat.itemOne} size="md" truncated></now-label-value-stacked>
+			</span>
+			<span className="customer360-caller-username">
+				<now-label-value-stacked align="horizontal-equal" xitem-min-width="100px" delimiter="," items={dataFormat.itemTwo} size="md" truncated></now-label-value-stacked>
+			</span>
 		</div>
 	);
 }

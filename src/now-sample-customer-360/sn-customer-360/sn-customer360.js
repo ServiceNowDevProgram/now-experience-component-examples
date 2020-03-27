@@ -16,7 +16,7 @@ createCustomElement('now-customer-360', {
 		table : {
 			default: null
 		},
-		sysId : {
+		sysid : {
 			default: null
 		}
 	},

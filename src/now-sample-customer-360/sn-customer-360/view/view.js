@@ -5,7 +5,7 @@ import { getCustomer360View } from './customer360view';
 import { locationFetch, companyFetch } from '../effects';
 
 export default (state, {dispatch}) => {
-	
+	debugger;
 	const { result , status , locationResult , companyResult } = state;
 
 	if(status == LOADED_SUCCESSFULLY){

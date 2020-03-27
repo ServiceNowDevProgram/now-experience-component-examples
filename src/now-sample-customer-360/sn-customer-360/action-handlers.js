@@ -41,6 +41,7 @@ export default {
     
     [INCIDENT_FETCH_SUCCESS]: (coeffects) => { //Ftech user when fetch Incident is successfull.
         const {action: { payload: {result} }, dispatch} = coeffects;
+        console.log("Incident Fetch Success...");
         dispatch(USER_FETCH_REQUESTED , {sysId: result.caller_id.value  , table : USER_TABLE});
     },
 
@@ -49,9 +50,17 @@ export default {
     [USER_FETCH_SUCCESS]: (coeffects) => {  //Fetch Location & Company when fetch user is successfull. Also update the state.
         const {action: { payload: {result} }, dispatch} = coeffects;
         let status = LOADED_SUCCESSFULLY;
+
+        let location = result.location.value;
+        let company = result.company.value;
+        if(location != undefined && location != ""){
+            dispatch(LOCATION_FETCH , {sysId : location , table : LOCATION_TABLE});	
+        }
         
-        dispatch(LOCATION_FETCH , {sysId : result.location.value , table : LOCATION_TABLE});	
-        dispatch(COMPANY_FETCH , {sysId : result.company.value , table : COMPANY_TABLE});	
+        if(company != undefined && company != ""){
+            dispatch(COMPANY_FETCH , {sysId : company , table : COMPANY_TABLE});	
+        }
+        
         dispatch(UPDATE_STATE , {result, status });			
     },
 
@@ -102,9 +111,16 @@ export default {
     },
 
     [actionTypes.COMPONENT_BOOTSTRAPPED]: ( coeffects ) => {
-        const {dispatch , updateState , state : {properties : {table , sysId}} } = coeffects;
+        const {dispatch , updateState , state : {properties : {table , sysid}} } = coeffects;
         debugger;
-        if(table == INCIDENT_TABLE){
+        console.log("Table Parameter...!")
+        console.log(table);
+        //console.log(formData.nowRecordCommonAttachmentCconnected);
+        console.log("sysId Parameter...!")
+        console.log(sysid);
+        let sysId = sysid;
+        if(table == INCIDENT_TABLE && sysId != null){
+            console.log("Triggering Incident Request....")
             dispatch(INCIDENT_FETCH_REQUESTED , {sysId,table});
         }else{
             //If the table is not "[INCIDENT_TABLE]", Show the message "No data available..."
