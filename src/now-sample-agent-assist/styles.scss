@@ -54,7 +54,7 @@
                 padding: 100px 10px;
                 xline-height: 100px;
 
-                .info-heading, .info-detailed-text{
+                .info-heading, .info-detailed-text , .info-detailed-text2{
                     display: block;
                     text-align: center;
                 }
@@ -67,6 +67,10 @@
                 .info-detailed-text{
                     font-size: 14px;
                     margin-top: 10px;
+                }
+
+                .info-detailed-text2{
+                    margin-top: 0px;
                 }
             }
         }

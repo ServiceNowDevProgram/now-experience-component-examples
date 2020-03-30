@@ -6,7 +6,7 @@ import { LOADING_DATA } from '../constants';
  */
 export const getLoadingDataView = () => {
 	return (
-		<div className="customer360">
+		<div className="customer360-caller">
 			<div className="loading-data">
 				<label>{LOADING_DATA}</label>
 			</div>

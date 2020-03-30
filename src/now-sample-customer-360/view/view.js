@@ -1,15 +1,14 @@
 import { LOADED_SUCCESSFULLY, NO_DATA_AVAILABLE } from '../constants'
-import { getNoDataAvailableView } from './no-data-available';
+import { getNoDataAvailableView } from './no-data-available-view';
 import { getLoadingDataView } from './loading-view';
-import { getCustomer360View } from './customer360view';
-import { locationFetch, companyFetch } from '../effects';
+import { getCustomer360View } from './customer-360-view';
 
 export default (state, {dispatch}) => {
-	debugger;
+	
 	const { result , status , locationResult , companyResult } = state;
 
 	if(status == LOADED_SUCCESSFULLY){
-		return getCustomer360View( result , locationResult , companyResult );
+		 return getCustomer360View( result , locationResult , companyResult );
 	}else if(status == NO_DATA_AVAILABLE){
 		return getNoDataAvailableView();
 	}else{

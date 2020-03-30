@@ -14,7 +14,8 @@ export const LOADING = "Loading";
 export const REFRESH_SEARCH = "REFRESH_SEARCH";
 export const NO_MATCHES_FOUND = "No matches found";
 
-export const TRY_MODIFY_YOUR_SEARCH = "Try modifying your search text or filter to find what you're looking for";
+export const TRY_MODIFY_YOUR_SEARCH_1 = "Try modifying your search text or ";
+export const TRY_MODIFY_YOUR_SEARCH_2 = "filter to find what you're looking for";
 export const KB_KNOWLEDGE_TABLE = "kb_knowledge";
 export const TABLE = "table";
 

@@ -30,7 +30,7 @@ export const fetchUser = createHttpEffect(TABLE_REST_URL, {
     errorActionType: USER_FETCH_ERROR
 });
 
-export const locationFetch = createHttpEffect(TABLE_REST_URL, {
+export const fetchLocation = createHttpEffect(TABLE_REST_URL, {
     method: HTTP_GET_METHOD,
     headers: {
         'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export const locationFetch = createHttpEffect(TABLE_REST_URL, {
     errorActionType: LOCATION_FETCH_ERROR
 });
 
-export const companyFetch = createHttpEffect(TABLE_REST_URL, {
+export const fetchCompany = createHttpEffect(TABLE_REST_URL, {
     method: HTTP_GET_METHOD,
     headers: {
         'Content-Type': 'application/json'

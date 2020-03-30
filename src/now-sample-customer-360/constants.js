@@ -16,23 +16,22 @@ export const HTTP_GET_METHOD = "GET";
 
 export const TABLE_REST_URL = "/api/now/table/:table/:sysId";
 export const LOADING_DATA = "Loading..."
-export const UPDATE_STATE = "UPDATE_STATE";
-
 export const PARAM_TABLE_ERROR = "Parameter table should be Incident";
+
 export const STATUS = "STATUS";
 export const LOADED_SUCCESSFULLY = "LOADED SUCCESSFULLY";
-
 export const LOCATION_FETCH = "LOCATION_FETCH";
+
 export const COMPANY_FETCH = "COMPANY_FETCH";
 export const COMPANY_TABLE = "core_company";
-
 export const LOCATION_TABLE = "cmn_location";
+
 export const LOCATION_FETCH_ERROR = "LOCATION_FETCH_ERROR";
 export const COMPANY_FETCH_ERROR = "COMPANY_FETCH_ERROR";
-
 export const LOCATION_FETCH_SUCCESS = "LOCATION_FETCH_SUCCESS";
+
 export const COMPANY_FETCH_SUCCESS = "COMPANY_FETCH_SUCCESS";
 export const USER_TABLE = "sys_user";
-
 export const CUSTOMER360 = "Customer 360";
+
 export const CALLER = "Caller"

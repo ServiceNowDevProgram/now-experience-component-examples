@@ -1,11 +1,17 @@
 import { NO_DATA , CALLER } from '../constants';
 
 
+const openUser = (a1 , a2) => {
+	console.log("openUser")
+	console.log(g_aw);
+}
+
+
 /**
  *  Method to get the customer 360 view.
  */
 export const getCustomer360View = (result , locationResult , companyResult) => {
-	let dataFormat = getCalleData(result, locationResult , companyResult);
+	 let dataFormat = getCalleData(result, locationResult , companyResult);
 	return (
 		<div className="customer360-caller">
 			<span className="customer360-caller-header">
@@ -14,7 +20,7 @@ export const getCustomer360View = (result , locationResult , companyResult) => {
 			<span className="customer360-caller-icon">
 				<now-avatar size="lg" user-name={ dataFormat.photo == "" ? dataFormat.name : ""}  image-src={ dataFormat.photo != "" ? "/"+dataFormat.photo+".iix?t=small" : ""}></now-avatar>
 			</span>
-			<span className="customer360-caller-username">
+			<span className="customer360-caller-username" on-click={openUser}>
 				{dataFormat.name}
 			</span>
 			<span className="customer360-caller-username">
@@ -27,7 +33,8 @@ export const getCustomer360View = (result , locationResult , companyResult) => {
 	);
 }
 
-const getCalleData = function(result, locationResult , companyResult){
+
+const getCalleData = (result, locationResult , companyResult) => {
 	
 	let name = null;
 	let photo = null;
