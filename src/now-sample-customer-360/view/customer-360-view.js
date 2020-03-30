@@ -1,16 +1,15 @@
-import { NO_DATA , CALLER } from '../constants';
+import { NO_DATA , CALLER  , OPEN_USER_DETAILS} from '../constants';
 
 
-const openUser = (a1 , a2) => {
-	console.log("openUser")
-	console.log(g_aw);
+const openUser = (dispatch) => {
+	dispatch(OPEN_USER_DETAILS , {});
 }
 
 
 /**
  *  Method to get the customer 360 view.
  */
-export const getCustomer360View = (result , locationResult , companyResult) => {
+export const getCustomer360View = (result , locationResult , companyResult , dispatch) => {
 	 let dataFormat = getCalleData(result, locationResult , companyResult);
 	return (
 		<div className="customer360-caller">
@@ -18,15 +17,19 @@ export const getCustomer360View = (result , locationResult , companyResult) => {
 				<span>{CALLER}</span>
 			</span>
 			<span className="customer360-caller-icon">
-				<now-avatar size="lg" user-name={ dataFormat.photo == "" ? dataFormat.name : ""}  image-src={ dataFormat.photo != "" ? "/"+dataFormat.photo+".iix?t=small" : ""}></now-avatar>
+				<span className="customer360-user-click" on-click={()=> {openUser(dispatch)}}>
+					<now-avatar size="lg" user-name={ dataFormat.photo == "" ? dataFormat.name : ""}  image-src={ dataFormat.photo != "" ? "/"+dataFormat.photo+".iix?t=small" : ""}></now-avatar>
+				</span>	
 			</span>
-			<span className="customer360-caller-username" on-click={openUser}>
-				{dataFormat.name}
+			<span className="customer360-caller-username" >
+				<span className="customer360-user-click" on-click={()=> {openUser(dispatch)}}>
+					{dataFormat.name}
+				</span>	
 			</span>
-			<span className="customer360-caller-username">
+			<span className="customer360-caller-details">
 				<now-label-value-stacked align="horizontal-equal" xitem-min-width="100px" delimiter="," items={dataFormat.itemOne} size="md" truncated></now-label-value-stacked>
 			</span>
-			<span className="customer360-caller-username">
+			<span className="customer360-caller-details">
 				<now-label-value-stacked align="horizontal-equal" xitem-min-width="100px" delimiter="," items={dataFormat.itemTwo} size="md" truncated></now-label-value-stacked>
 			</span>
 		</div>
@@ -51,7 +54,7 @@ const getCalleData = (result, locationResult , companyResult) => {
 	];
 
 	itemTwo = [ 
-		{ "label": "Email", "value": {"type": "text-link","label":  result.email != "" ? result.email : NO_DATA} }, 
+		{ "label": "Email", "value": {"type": "string","value":  result.email != "" ? result.email : NO_DATA} }, 
 		{ "label": "Business Phone", "value": {"type": "string", "value":  result.phone != "" ? result.phone : NO_DATA } }, 
 		{ "label": "City", "value": {"type": "string", "value": result.city != "" ? result.city : NO_DATA  } }, 
 	];

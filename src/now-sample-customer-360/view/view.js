@@ -8,7 +8,7 @@ export default (state, {dispatch}) => {
 	const { result , status , locationResult , companyResult } = state;
 
 	if(status == LOADED_SUCCESSFULLY){
-		 return getCustomer360View( result , locationResult , companyResult );
+		 return getCustomer360View( result , locationResult , companyResult , dispatch );
 	}else if(status == NO_DATA_AVAILABLE){
 		return getNoDataAvailableView();
 	}else{

@@ -35,3 +35,5 @@ export const USER_TABLE = "sys_user";
 export const CUSTOMER360 = "Customer 360";
 
 export const CALLER = "Caller"
+export const PREVIEW_RECORD = "PREVIEW_RECORD";
+export const OPEN_USER_DETAILS = "OPEN_USER_DETAILS";

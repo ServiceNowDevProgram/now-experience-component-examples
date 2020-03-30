@@ -19,7 +19,10 @@ import {    INCIDENT_FETCH_REQUESTED ,
             LOCATION_FETCH_SUCCESS,
             LOCATION_TABLE,
             COMPANY_TABLE,
-            USER_TABLE
+            USER_TABLE,
+            OPEN_USER_DETAILS,
+            PREVIEW_RECORD,
+            TABLE
         } from './constants';
 
 
@@ -94,14 +97,18 @@ export default {
         updateState( {result , status , reason});	
     },
 
-    
-
     [COMPANY_FETCH_ERROR] : ()=>{
         //By default if no company information, it shows "No Data"
     },
 
     [LOCATION_FETCH_ERROR] : () => {
         //By default if no location information, it shows "No Data"
+    },
+
+    [OPEN_USER_DETAILS] : (coeffects) => {
+        const {dispatch , state :{ result : {sys_id}}} = coeffects;
+        const table = USER_TABLE;
+        dispatch(PREVIEW_RECORD , {table,sys_id});
     },
 
     [actionTypes.COMPONENT_BOOTSTRAPPED]: ( coeffects ) => {

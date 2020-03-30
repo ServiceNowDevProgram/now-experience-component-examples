@@ -47,7 +47,7 @@
         grid-row: 2 / 5;
     }
     
-    .customer360-caller-username{
+    .customer360-caller-username , .customer360-caller-details{
         white-space: nowrap;
         text-overflow: ellipsis;
         font-weight: 600;
@@ -57,4 +57,10 @@
         margin: 2px 2px;
         overflow: hidden;
     }
+
+    .customer360-user-click{
+        display: inline;
+        cursor: pointer;
+    }
+    
 }
