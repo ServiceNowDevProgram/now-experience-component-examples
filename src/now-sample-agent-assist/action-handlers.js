@@ -4,77 +4,77 @@ import {fetchKBKnowledge} from './effects';
 import { 	
 			KB_KNOWLEDGE_FETCH_REQUESTED,
 			KB_KNOWLEDGE_FETCH_SUCCESS, 
-			KB_KNOWLEDGE_FETCH_ERROR,
-			UPDATE_STATE,
 			FOUND_SEARCH_ITEMS,
 			NO_SEARCH_ITEMS,
-			ERROR_WHILE_SEARCH,
 			SEARCH_FETCH_IN_PROGRESS , 
 			REFRESH_SEARCH,
 			KB_KNOWLEDGE_TABLE,
-			NUMBER_OF_RECORDS_FETCH
+			NUMBER_OF_RECORDS_FETCH,
+			NO_KB_KNOWLEDGE_RECORDS
 
 } from './constants';
 
-const triggerFetchKBKnowledge = function(dispatch){
-	const status = SEARCH_FETCH_IN_PROGRESS;
+const searchStringUpdateHandler = (coeffects) => {
+	const {dispatch ,  state : {properties : {fields}} , updateState } = coeffects;
+	let SEARCH_STRING = ( fields != null && fields.short_description && fields.short_description.value ) ? fields.short_description.value : "";
 	
-	//Update the state, for Inprogress view...
-	dispatch(UPDATE_STATE , {status});
-
-	//Fetch KB_KNOWLEDGE records...
-	dispatch(KB_KNOWLEDGE_FETCH_REQUESTED , {});
+	if(SEARCH_STRING != "" ){ // If search string is not null then refresh the component...
+		SEARCH_STRING = SEARCH_STRING.trim();
+		
+		updateState({SEARCH_STRING});
+		dispatch(REFRESH_SEARCH, {});
+	}else{ 
+		//If search string is empty, Clear the response list...
+		updateState({SEARCH_STRING});
+		dispatch(NO_KB_KNOWLEDGE_RECORDS, {});
+	}	
 }
 
 export default {
 
-	[UPDATE_STATE] : (coeffects) => {
-		let {state , action : {payload : {status , result }} , updateState} = coeffects;
-		updateState({status , result});
-	},
-
-    [KB_KNOWLEDGE_FETCH_REQUESTED] : fetchKBKnowledge, 
+	[KB_KNOWLEDGE_FETCH_REQUESTED] : fetchKBKnowledge, 
 
 	[KB_KNOWLEDGE_FETCH_SUCCESS] : (coeffects)=> {
-		let {action: { payload: {result} }, dispatch} = coeffects;
+		let {action: { payload: {result} } , updateState} = coeffects;
 		if( result != null && result.length > 0 ){
 			status = FOUND_SEARCH_ITEMS;
 		}else{
 			status = NO_SEARCH_ITEMS;
 			result = [];
 		} 
-		dispatch(UPDATE_STATE , {result, status }); 
+
+		updateState({result, status}); 
 	},
 
-	[KB_KNOWLEDGE_FETCH_ERROR] : (coeffects)=> {
+	[NO_KB_KNOWLEDGE_RECORDS] : (coeffects)=> {
 		const result = [];
-		const status = ERROR_WHILE_SEARCH;
-		let {dispatch} = coeffects;
-		dispatch(UPDATE_STATE , {result, status }); 
+		const status = NO_SEARCH_ITEMS;
+		let { updateState } = coeffects;
+
+		updateState({result, status }); 
 	},
 
 	[REFRESH_SEARCH] : (coeffects) => {
-		const {dispatch , action : {payload: {table , sysparm_query }} ,   state : {properties : {fields}} } = coeffects;
+		const {dispatch, state : { SEARCH_STRING }  , updateState} = coeffects;
+		
+		const table = KB_KNOWLEDGE_TABLE;
 
 		const status = SEARCH_FETCH_IN_PROGRESS;
 		const sysparm_limit = NUMBER_OF_RECORDS_FETCH;
+		const sysparm_query = `short_descriptionLIKE${SEARCH_STRING}^ORtextLIKE${SEARCH_STRING}`;
 	
 		//Update the state, for Inprogress view...
-		dispatch(UPDATE_STATE , {status});
+		updateState({status});
 
 		//Fetch KB_KNOWLEDGE records...
-		dispatch(KB_KNOWLEDGE_FETCH_REQUESTED ,{table , sysparm_query , sysparm_limit} );
+		dispatch(KB_KNOWLEDGE_FETCH_REQUESTED ,{table , sysparm_query , sysparm_limit} ); // pathParams & queryParams can be passed in single object.
 	},
 
 	[actionTypes.COMPONENT_BOOTSTRAPPED]: ( coeffects ) => {
-		const {dispatch ,  state : {properties : {fields}} } = coeffects;
-		const searchString = fields.short_description.value;
+		searchStringUpdateHandler(coeffects);
+	},
 
-		if(searchString != "" && searchString != null){
-			let sysparm_query = `short_descriptionLIKE${searchString}^ORtextLIKE${searchString}`;
-			let sysparm_limit = NUMBER_OF_RECORDS_FETCH;
-			
-			dispatch(REFRESH_SEARCH, {table : KB_KNOWLEDGE_TABLE , sysparm_query });
-		}	
+	[actionTypes.COMPONENT_PROPERTY_CHANGED] : (coeffects) => {
+		searchStringUpdateHandler(coeffects);
 	}
 }

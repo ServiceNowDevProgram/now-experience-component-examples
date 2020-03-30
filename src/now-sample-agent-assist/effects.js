@@ -2,9 +2,9 @@ import {createHttpEffect} from '@servicenow/ui-effect-http';
 import { 
     KB_KNOWLEDGE_REST_IRL,
     KB_KNOWLEDGE_FETCH_SUCCESS,
-    KB_KNOWLEDGE_FETCH_ERROR,
     HTTP_GET_METHOD,
     TABLE,
+    NO_KB_KNOWLEDGE_RECORDS,
     SYS_PARAM_QUERY,
     SYS_PARAM_LIMIT
 } from './constants';
@@ -17,7 +17,7 @@ export const fetchKBKnowledge = createHttpEffect(KB_KNOWLEDGE_REST_IRL, {
         'Content-Type': 'application/json'
     },
     pathParams: [TABLE],
-    queryParams : ['sysparm_query' , 'sysparm_limit'],
+    queryParams : [SYS_PARAM_QUERY , SYS_PARAM_LIMIT],
     successActionType: KB_KNOWLEDGE_FETCH_SUCCESS,
-    errorActionType: KB_KNOWLEDGE_FETCH_ERROR
+    errorActionType: NO_KB_KNOWLEDGE_RECORDS
 });

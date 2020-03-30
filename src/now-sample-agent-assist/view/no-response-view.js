@@ -1,7 +1,10 @@
-import { NO_SEARCH_ITEMS , NO_MATCHES_FOUND , TRY_MODIFY_YOUR_SEARCH } from '../constants'
+import { 
+            NO_SEARCH_ITEMS, 
+            NO_MATCHES_FOUND, 
+            TRY_MODIFY_YOUR_SEARCH 
+       } from '../constants'
 
 export const renderSearchEmptyResponse = (status) => {
-    debugger;
     if(status != NO_SEARCH_ITEMS){
         return;
     }else{

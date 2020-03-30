@@ -1,6 +1,5 @@
 @import '@servicenow/sass-kit/host';
 
-
 .sample-agent-assist{
     display: flex;
     flex-direction: column;
@@ -23,6 +22,7 @@
         width: 100%;
         overflow: hidden;
         margin: 0px;
+        padding: 10px 0px;
     }
 
     .search-list-parent{
@@ -37,6 +37,10 @@
             padding: 0px 0px;
             font-size: 15px;
             width: 100%;
+
+            &:focus {
+                outline-color: rgb(30, 133, 109);
+            }
         }
         
         .search-list{
@@ -47,7 +51,8 @@
             .no-response-found{
                 height: 200px;
                 display: block;
-                padding: 100px 20%;
+                padding: 100px 10px;
+                xline-height: 100px;
 
                 .info-heading, .info-detailed-text{
                     display: block;
@@ -65,6 +70,5 @@
                 }
             }
         }
-
     }
 }
