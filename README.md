@@ -2,16 +2,14 @@
 ## Setting up
 1. Install Now Experience CLI globally, if not done already: `npm install --global @servicenow/cli`
 
-2. Open the local repo folder: `cd now-customer-360`
+2. Open the local repo folder: `cd now-experience-component-examples`
 
 3. Run `npm i`
 >Read more about Now Experience CLI [here](https://developer.servicenow.com/now-experience-ui-framework/support)
 
 ## Run commponent
-`now-cli develop --open`
+1. Customer 360 - `npm run start:customer-360`
+2. To-do List - `npm run start:to-do-list`
+3. Agent Assist - `npm run start:agent-assist`
 
-## Refresh Customer 360 for one incident, follow below steps.
-
-1. `cd example` open the file element.js
-2. Update the sysId property for the custom element `now-customer-360`.   
-
+> Make sure that you running one component at a time.

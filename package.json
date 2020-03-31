@@ -37,6 +37,8 @@
         "@servicenow/cli-component-archetype-dev": "orlando"
     },
     "scripts": {
-        "start:agent-assist": "now-cli  develop -- --entry example/agentassist.js --open"
+        "start:customer-360": "now-cli  develop --open --entry=./customer-360",
+        "start:agent-assist": "now-cli  develop --open --entry=./agent-assist",
+        "start:to-do-list": "now-cli  develop --open --entry=./to-do-list"
     }
 }
