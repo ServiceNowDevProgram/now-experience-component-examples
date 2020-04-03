@@ -3,7 +3,7 @@ import snabbdom from '@servicenow/ui-renderer-snabbdom';
 
 import view from './view';
 import styles from './styles.scss';
-import actionHandlers from './action-handlers';
+import actionHandlers from './actionHandlers';
 
 createCustomElement('sn-modal', {
 	renderer: {type: snabbdom},
@@ -11,7 +11,7 @@ createCustomElement('sn-modal', {
 	styles,
 	actionHandlers,
 	properties: {
-        itemId: {},
+		itemId: {},
 		modalHeader: {},
 		modalBody: {},
 		cancelEvent: {},

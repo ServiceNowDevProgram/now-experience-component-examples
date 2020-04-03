@@ -1,1 +1,1 @@
-import './now-sample-agent-assist-response-item';
+import './nowSampleAgentAssistResponseItem';

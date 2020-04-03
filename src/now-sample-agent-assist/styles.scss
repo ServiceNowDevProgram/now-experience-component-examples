@@ -1,78 +1,80 @@
 @import '@servicenow/sass-kit/host';
 
-.sample-agent-assist{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    flex: 1 1 auto;
+.sample-agent-assist {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	flex: 1 1 auto;
 
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    padding: 1.5rem 1.5rem 0px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	padding: 1.5rem 1.5rem 0px;
 
-    .sample-agent-assist-heading{
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        display: inline-block;
-        color: RGB(var(--now-color--neutral-12,66,80,81));
-        font-size: 1.5rem;
-        font-weight: 400;
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        margin: 0px;
-        padding: 10px 0px;
-    }
+	.sample-agent-assist-heading {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		display: inline-block;
+		color: RGB(var(--now-color--neutral-12, 66, 80, 81));
+		font-size: 1.5rem;
+		font-weight: 400;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		margin: 0px;
+		padding: 10px 0px;
+	}
 
-    .search-list-parent{
-        margin-top: 15px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: 500px;
-        display: block;
+	.search-list-parent {
+		margin-top: 15px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		height: 500px;
+		display: block;
 
-        .search-input{
-            line-height: 25px;
-            padding: 0px 0px;
-            font-size: 15px;
-            width: 100%;
+		.search-input {
+			line-height: 25px;
+			padding: 0px 0px;
+			font-size: 15px;
+			width: 100%;
 
-            &:focus {
-                outline-color: rgb(30, 133, 109);
-            }
-        }
-        
-        .search-list{
-            display: grid;
-            grid-template-columns: auto;
-            padding: 10px 0px;
+			&:focus {
+				outline-color: rgb(30, 133, 109);
+			}
+		}
 
-            .no-response-found{
-                height: 200px;
-                display: block;
-                padding: 100px 10px;
-                xline-height: 100px;
+		.search-list {
+			display: grid;
+			grid-template-columns: auto;
+			padding: 10px 0px;
 
-                .info-heading, .info-detailed-text , .info-detailed-text2{
-                    display: block;
-                    text-align: center;
-                }
+			.no-response-found {
+				height: 200px;
+				display: block;
+				padding: 100px 10px;
+				xline-height: 100px;
 
-                .info-heading{
-                    font-weight: bold;
-                    font-size: 20px;
-                }
+				.info-heading,
+				.info-detailed-text,
+				.info-detailed-text2 {
+					display: block;
+					text-align: center;
+				}
 
-                .info-detailed-text{
-                    font-size: 14px;
-                    margin-top: 10px;
-                }
+				.info-heading {
+					font-weight: bold;
+					font-size: 20px;
+				}
 
-                .info-detailed-text2{
-                    margin-top: 0px;
-                }
-            }
-        }
-    }
+				.info-detailed-text {
+					font-size: 14px;
+					margin-top: 10px;
+				}
+
+				.info-detailed-text2 {
+					margin-top: 0px;
+				}
+			}
+		}
+	}
 }

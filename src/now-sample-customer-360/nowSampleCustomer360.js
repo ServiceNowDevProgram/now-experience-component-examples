@@ -1,4 +1,4 @@
-import {createCustomElement, actionTypes} from '@servicenow/ui-core';
+import {createCustomElement} from '@servicenow/ui-core';
 import snabbdom from '@servicenow/ui-renderer-snabbdom';
 
 import '@servicenow/now-avatar';
@@ -6,17 +6,23 @@ import '@servicenow/now-label-value';
 
 import styles from './styles.scss';
 import view from './view/view';
-import actionHandlers from './action-handlers';
-
+import actionHandlers from './actionHandlers';
+import {LOADING_DATA} from './constants';
 
 createCustomElement('now-sample-customer-360', {
 	renderer: {type: snabbdom},
 	view,
-	properties : {
-		table : {
+	initialState: {
+		userResult: null,
+		status: LOADING_DATA,
+		locationResult: null,
+		companyResult: null
+	},
+	properties: {
+		table: {
 			default: null
 		},
-		sysid : {
+		sysid: {
 			default: null
 		}
 	},

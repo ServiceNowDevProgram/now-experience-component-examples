@@ -1,1 +1,1 @@
-import './now-sample-customer-360';
+import './nowSampleCustomer360';

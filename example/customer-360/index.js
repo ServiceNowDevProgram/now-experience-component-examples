@@ -4,5 +4,5 @@ const el = document.createElement('DIV');
 document.body.appendChild(el);
 
 el.innerHTML = `		
-    <now-sample-customer-360 table="incident" sysid="a83820b58f723300e7e16c7827bdeed2" /> 
+    <now-sample-customer-360 table="incident" sysid="552c48888c033300964f4932b03eb092" /> 
 `;

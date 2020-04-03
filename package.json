@@ -29,16 +29,15 @@
         "@servicenow/now-button": "orlando",
         "@servicenow/now-alert": "orlando",
         "@servicenow/now-toggle": "orlando",
-        "@servicenow/ui-effect-graphql": "orlando",
-        "sn-translate": "orlando"
+        "@servicenow/ui-effect-graphql": "orlando"
     },
     "devDependencies": {
         "@servicenow/cli-archetype-dev": "orlando",
         "@servicenow/cli-component-archetype-dev": "orlando"
     },
     "scripts": {
-        "start:customer-360": "now-cli  develop --open --entry=./customer-360",
-        "start:agent-assist": "now-cli  develop --open --entry=./agent-assist",
-        "start:to-do-list": "now-cli  develop --open --entry=./to-do-list"
+        "start:customer-360": "now-cli develop --open --entry=./customer-360",
+        "start:agent-assist": "now-cli develop --open --entry=./agent-assist",
+        "start:todo-list": "now-cli develop --open --entry=./to-do-list"
     }
 }

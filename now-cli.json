@@ -1,7 +1,7 @@
 {
   "development": {
     "proxy": {
-      "origin": "https://k8s0051006-node1.thunder.lab3.service-now.com/",
+      "origin": "https://k8s0054400-node1.sdthunder.lab3.service-now.com/",
       "headers": {
         "Authorization": "Basic YWRtaW46YWRtaW4="
       },

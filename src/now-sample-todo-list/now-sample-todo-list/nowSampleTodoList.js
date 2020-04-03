@@ -1,10 +1,9 @@
 import {createCustomElement} from '@servicenow/ui-core';
 import snabbdom from '@servicenow/ui-renderer-snabbdom';
-
 import view from './view';
 import styles from './styles.scss';
-import actionHandlers from './action-handlers';
-import { TRUE, FALSE } from '../constants';
+import actionHandlers from './actionHandlers';
+import {TRUE, FALSE} from '../constants';
 
 createCustomElement('now-sample-todo-list', {
 	renderer: {type: snabbdom},
@@ -20,12 +19,12 @@ createCustomElement('now-sample-todo-list', {
 	},
 	properties: {
 		activeToDos: {
-			computed({ todoList }) {
+			computed({todoList}) {
 				return todoList.filter(todo => todo.active === TRUE);
 			}
 		},
 		completedToDos: {
-			computed({ todoList }) {
+			computed({todoList}) {
 				return todoList.filter(todo => todo.active === FALSE);
 			}
 		}

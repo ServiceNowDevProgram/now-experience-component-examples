@@ -1,13 +1,10 @@
 import '@servicenow/now-button';
 import '@servicenow/now-alert';
-
 import '../now-sample-todo-list-item';
 import '../modal';
-
 import {
 	ENTER_KEY_CODE,
 	CREATE_TODO,
-	
 	MESSAGE_HIDE_COMPLETED_TO_DOS,
 	MESSAGE_SHOW_COMPLETED_TO_DOS
 } from '../constants';
@@ -30,27 +27,35 @@ export default (state, {dispatch, updateState}) => {
 		if (keyCode === ENTER_KEY_CODE && !!value.trim()) {
 			dispatch(CREATE_TODO);
 		}
-	}
-
-	const handlerToDoInput = ({target: {value}}) => updateState({todoInputValue: value});
-
-	const renderToDoList = () => {
-		if (todoList.length === 0) return;
-		
-		return (
-			<div className="todo-list-wrapper">
-				{ renderActiveToDos() }
-				{ renderCompletedToDos() }
-			</div>
-		)
 	};
+
+	const handlerToDoInput = ({target: {value}}) =>
+		updateState({todoInputValue: value});
 
 	const renderActiveToDos = () => {
 		if (activeToDos.length === 0) return;
 
 		return (
 			<div className="todo-list active-todos">
-				{ activeToDos.map(todo => <now-sample-todo-list-item itemLabel={todo.short_description} itemId={todo.sys_id} itemCompleted={false} />) }
+				{activeToDos.map(todo => (
+					<now-sample-todo-list-item
+						key={todo.sys_id}
+						itemLabel={todo.short_description}
+						itemId={todo.sys_id}
+						itemCompleted={false}
+					/>
+				))}
+			</div>
+		);
+	};
+
+	const renderToDoList = () => {
+		if (todoList.length === 0) return;
+
+		return (
+			<div className="todo-list-wrapper">
+				{renderActiveToDos()}
+				{renderCompletedToDos()}
 			</div>
 		);
 	};
@@ -58,19 +63,32 @@ export default (state, {dispatch, updateState}) => {
 	const renderCompletedToDos = () => {
 		if (completedToDos.length === 0) return;
 
-		const toggleCompletedToDosBtnLabel = showingCompletedItems ? MESSAGE_HIDE_COMPLETED_TO_DOS : MESSAGE_SHOW_COMPLETED_TO_DOS;
-		const toggleCompletedToDos = () => updateState({showingCompletedItems: !showingCompletedItems});
+		const toggleCompletedToDosBtnLabel = showingCompletedItems
+			? MESSAGE_HIDE_COMPLETED_TO_DOS
+			: MESSAGE_SHOW_COMPLETED_TO_DOS;
+		const toggleCompletedToDos = () =>
+			updateState({showingCompletedItems: !showingCompletedItems});
 
 		return (
 			<div className="toggle-completed-items-wrapper">
-				<now-button label={toggleCompletedToDosBtnLabel} size="md" variant="primary" on-click={toggleCompletedToDos} />
-				{
-					showingCompletedItems ? (
-						<div className="todo-list completed-todos">
-							{ completedToDos.map(todo => <now-sample-todo-list-item itemLabel={todo.short_description} itemId={todo.sys_id} itemCompleted={true} />) }
-						</div>
-					) : null
-				}
+				<now-button
+					label={toggleCompletedToDosBtnLabel}
+					size="md"
+					variant="primary"
+					on-click={toggleCompletedToDos}
+				/>
+				{showingCompletedItems ? (
+					<div className="todo-list completed-todos">
+						{completedToDos.map(todo => (
+							<now-sample-todo-list-item
+								key={todo.sys_id}
+								itemLabel={todo.short_description}
+								itemId={todo.sys_id}
+								itemCompleted={true}
+							/>
+						))}
+					</div>
+				) : null}
 			</div>
 		);
 	};
@@ -78,8 +96,8 @@ export default (state, {dispatch, updateState}) => {
 	const renderFooterSection = () => {
 		return (
 			<div className="footer">
-				{ renderProgressMessage() }
-				{ renderModal() }
+				{renderProgressMessage()}
+				{renderModal()}
 			</div>
 		);
 	};
@@ -96,37 +114,55 @@ export default (state, {dispatch, updateState}) => {
 
 	const renderModal = () => {
 		if (!modal) return;
-		return <sn-modal item-id={modal.id} modal-header={modal.header} modal-body={modal.body} success-event={modal.successEvent} cancel-event={modal.cancelEvent} />;
+		return (
+			<sn-modal
+				item-id={modal.id}
+				modal-header={modal.header}
+				modal-body={modal.body}
+				success-event={modal.successEvent}
+				cancel-event={modal.cancelEvent}
+			/>
+		);
 	};
 
 	const renderAlert = () => {
 		if (!alert) return;
 		return (
 			<div className="alert-container">
-				<now-alert content={alert.content} status={alert.type} action={{type: 'dismiss'}} />
+				<now-alert
+					content={alert.content}
+					status={alert.type}
+					action={{type: 'dismiss'}}
+				/>
 			</div>
 		);
 	};
 
 	return (
 		<main className="todo-list-container">
-            <header>
-                <p className="todo-container-title">To-Do List</p>
-            </header>
-            <div className="todo-input-wrapper">
-                <input
-                    className="todo-input"
-                    placeholder="Add a to-do..."
-                    value={todoInputValue}
-                    on-input={handlerToDoInput}
-                    on-keypress={handlerToDoInputKeyPress}
-                />
-				<now-button label="Add" size="md" variant="primary" disabled={!todoInputValue} on-click={handlerToDoInputBtn} />
-            </div>
+			<header>
+				<p className="todo-container-title">To-Do List</p>
+			</header>
+			<div className="todo-input-wrapper">
+				<input
+					className="todo-input"
+					placeholder="Add a to-do..."
+					value={todoInputValue}
+					on-input={handlerToDoInput}
+					on-keypress={handlerToDoInputKeyPress}
+				/>
+				<now-button
+					label="Add"
+					size="md"
+					variant="primary"
+					disabled={!todoInputValue}
+					on-click={handlerToDoInputBtn}
+				/>
+			</div>
 
-			{ renderAlert() }
-			{ renderToDoList() }
-			{ renderFooterSection() }
+			{renderAlert()}
+			{renderToDoList()}
+			{renderFooterSection()}
 		</main>
 	);
 };

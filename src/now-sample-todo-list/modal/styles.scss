@@ -1,44 +1,44 @@
 .modal-container-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, .2);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .modal-container {
-    max-width: 80%;
-    margin: auto;
-    border-radius: 2px;
-    border: 1px solid #cdcdcd;
-    background-color: #fff;
-    position: relative;
-    top: 1rem;
+	max-width: 80%;
+	margin: auto;
+	border-radius: 2px;
+	border: 1px solid #cdcdcd;
+	background-color: #fff;
+	position: relative;
+	top: 1rem;
 
-    .modal-header {
-        padding: 10px;
-        font-size: 1rem;
-        font-weight: bold;
-        border-bottom: 1px solid #cdcdcd;
-    }
+	.modal-header {
+		padding: 10px;
+		font-size: 1rem;
+		font-weight: bold;
+		border-bottom: 1px solid #cdcdcd;
+	}
 
-    .modal-body {
-        font-size: .9rem;
-        padding: 10px;
-        min-height: 2rem;
-        border-bottom: 1px solid #cdcdcd;
-    }
+	.modal-body {
+		font-size: 0.9rem;
+		padding: 10px;
+		min-height: 2rem;
+		border-bottom: 1px solid #cdcdcd;
+	}
 
-    .modal-footer {
-        margin: 10px 0px;
-        display: flex;
-        justify-content: flex-end;
-        padding: 0px 10px;
+	.modal-footer {
+		margin: 10px 0px;
+		display: flex;
+		justify-content: flex-end;
+		padding: 0px 10px;
 
-        now-button:first-child {
-            margin-right: 10px;
-        }
-    }
+		now-button:first-child {
+			margin-right: 10px;
+		}
+	}
 }

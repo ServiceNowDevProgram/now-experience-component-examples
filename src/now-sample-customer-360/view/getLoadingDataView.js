@@ -1,5 +1,4 @@
-import { LOADING_DATA } from '../constants';
-
+import {LOADING_DATA} from '../constants';
 
 /**
  * 	Method to get the loading view.
@@ -12,4 +11,4 @@ export const getLoadingDataView = () => {
 			</div>
 		</div>
 	);
-}
+};
