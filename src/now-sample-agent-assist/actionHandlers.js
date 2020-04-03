@@ -16,17 +16,17 @@ import {
 const searchStringUpdateHandler = coeffects => {
 	const {
 		dispatch,
-		state: {
-			properties: {fields}
-		},
+		properties: {fields},
 		updateState
 	} = coeffects;
 	let SEARCH_STRING =
-		fields != null && fields.short_description && fields.short_description.value
+		fields !== null &&
+		fields.short_description &&
+		fields.short_description.value
 			? fields.short_description.value
 			: '';
 
-	if (SEARCH_STRING != '') {
+	if (SEARCH_STRING !== '') {
 		// If search string is not null then refresh the component...
 		SEARCH_STRING = SEARCH_STRING.trim();
 
@@ -49,7 +49,7 @@ export default {
 			},
 			updateState
 		} = coeffects;
-		if (result != null && result.length > 0) {
+		if (result !== null && result.length > 0) {
 			status = FOUND_SEARCH_ITEMS;
 		} else {
 			status = NO_SEARCH_ITEMS;

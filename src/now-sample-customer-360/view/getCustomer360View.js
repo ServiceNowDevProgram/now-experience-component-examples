@@ -20,9 +20,9 @@ const getCalleData = (result, locationResult, companyResult) => {
 			value: {
 				type: 'string',
 				value:
-					companyResult != null &&
-					companyResult.name != '' &&
-					companyResult.name != null
+					companyResult !== null &&
+					companyResult.name !== '' &&
+					companyResult.name !== null
 						? companyResult.name
 						: NO_DATA
 			}
@@ -32,9 +32,9 @@ const getCalleData = (result, locationResult, companyResult) => {
 			value: {
 				type: 'string',
 				value:
-					locationResult != null &&
-					locationResult.name != '' &&
-					locationResult.name != null
+					locationResult !== null &&
+					locationResult.name !== '' &&
+					locationResult.name !== null
 						? locationResult.name
 						: NO_DATA
 			}
@@ -46,19 +46,19 @@ const getCalleData = (result, locationResult, companyResult) => {
 			label: 'Email',
 			value: {
 				type: 'string',
-				value: result.email != '' ? result.email : NO_DATA
+				value: result.email !== '' ? result.email : NO_DATA
 			}
 		},
 		{
 			label: 'Business Phone',
 			value: {
 				type: 'string',
-				value: result.phone != '' ? result.phone : NO_DATA
+				value: result.phone !== '' ? result.phone : NO_DATA
 			}
 		},
 		{
 			label: 'City',
-			value: {type: 'string', value: result.city != '' ? result.city : NO_DATA}
+			value: {type: 'string', value: result.city !== '' ? result.city : NO_DATA}
 		}
 	];
 
@@ -88,9 +88,9 @@ export const getCustomer360View = (
 					}}>
 					<now-avatar
 						size="lg"
-						user-name={dataFormat.photo == '' ? dataFormat.name : ''}
+						user-name={dataFormat.photo === '' ? dataFormat.name : ''}
 						image-src={
-							dataFormat.photo != ''
+							dataFormat.photo !== ''
 								? '/' + dataFormat.photo + '.iix?t=small'
 								: ''
 						}></now-avatar>

@@ -40,9 +40,9 @@ export default {
 			updateState
 		} = coeffects;
 		if (
-			result != null &&
-			result.caller_id != null &&
-			result.caller_id.value != null
+			result !== null &&
+			result.caller_id !== null &&
+			result.caller_id.value !== null
 		) {
 			dispatch(USER_FETCH_REQUESTED, {
 				sysId: result.caller_id.value,
@@ -73,13 +73,13 @@ export default {
 		let status = LOADED_SUCCESSFULLY;
 
 		let location = result.location.value;
-		if (location != undefined && location != '') {
+		if (location !== undefined && location !== '') {
 			//Dispatch action for fetching location.
 			dispatch(LOCATION_FETCH, {sysId: location, table: LOCATION_TABLE});
 		}
 
 		let company = result.company.value;
-		if (company != undefined && company != '') {
+		if (company !== undefined && company !== '') {
 			//Dispatch action for fetching company.
 			dispatch(COMPANY_FETCH, {sysId: company, table: COMPANY_TABLE});
 		}
@@ -163,7 +163,7 @@ export default {
 		} = coeffects;
 
 		let sysId = sysid;
-		if (table == INCIDENT_TABLE && sysId != null) {
+		if (table === INCIDENT_TABLE && sysId !== null) {
 			dispatch(INCIDENT_FETCH_REQUESTED, {sysId, table});
 		} else {
 			//If the table is not "[INCIDENT_TABLE]", Show the message "No data available..."

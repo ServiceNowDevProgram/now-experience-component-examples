@@ -41,7 +41,7 @@ export default {
 			dispatch,
 			updateState
 		} = coeffects;
-		const todoIndex = todoList.findIndex(todo => todo.sys_id == payload.id);
+		const todoIndex = todoList.findIndex(todo => todo.sys_id === payload.id);
 		todoList.splice(todoIndex, 1);
 		updateState({
 			showProgress: true,

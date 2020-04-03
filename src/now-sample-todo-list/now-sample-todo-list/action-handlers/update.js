@@ -19,7 +19,7 @@ export default {
 			state: {todoList},
 			updateState
 		} = coeffects;
-		const todo = todoList.find(todo => todo.sys_id == payload.id);
+		const todo = todoList.find(todo => todo.sys_id === payload.id);
 		todo.active = '' + payload.active;
 		updateState({todoList: [...todoList]});
 		dispatch(UPDATE_TODO_REQUESTED, {

@@ -6,8 +6,8 @@ import {
 } from '../constants';
 
 export const renderSearchEmptyResponse = status => {
-	if (status != NO_SEARCH_ITEMS) {
-		return;
+	if (status !== NO_SEARCH_ITEMS) {
+		return null;
 	} else {
 		return (
 			<span className="no-response-found">

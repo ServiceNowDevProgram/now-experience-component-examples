@@ -13,7 +13,7 @@ export const renderSearchResponse = ({state, updateState, dispatch}) => {
 
 	const triggerSearch = ({target: {value}}) => {
 		let SEARCH_STRING = value;
-		if (SEARCH_STRING != '' && SEARCH_STRING != null) {
+		if (SEARCH_STRING !== '' && SEARCH_STRING !== null) {
 			SEARCH_STRING = SEARCH_STRING.trim();
 
 			updateState({SEARCH_STRING});
@@ -24,7 +24,7 @@ export const renderSearchResponse = ({state, updateState, dispatch}) => {
 		}
 	};
 
-	if (status != FOUND_SEARCH_ITEMS && status != NO_SEARCH_ITEMS) {
+	if (status !== FOUND_SEARCH_ITEMS && status !== NO_SEARCH_ITEMS) {
 		return;
 	} else {
 		return (
@@ -39,7 +39,8 @@ export const renderSearchResponse = ({state, updateState, dispatch}) => {
 						<now-sample-agent-assist-response-item
 							article-short-description={item.short_description}
 							article-body={item.text}
-							itemId={item.sys_id}
+							item-id={item.sys_id}
+							ref={item.sys_id}
 						/>
 					))}
 				</div>

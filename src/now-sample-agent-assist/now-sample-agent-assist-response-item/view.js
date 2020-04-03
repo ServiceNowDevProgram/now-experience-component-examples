@@ -1,19 +1,13 @@
 import {ARTICLE} from '../constants';
 
 const trimArticleBody = function (articleBody) {
-	if (articleBody == '' || articleBody == null) {
-		return '';
-	} else {
-		var div = document.createElement('div');
-		div.innerHTML = articleBody;
-		return div.innerText.substring(0, 102);
-	}
+	return articleBody ? <div>{articleBody.substring(0, 102)}</div> : null;
 };
 
-export default coeffects => {
+export default state => {
 	const {
 		properties: {articleShortDescription, articleBody}
-	} = coeffects;
+	} = state;
 
 	return (
 		<div className="search-item">

@@ -10,16 +10,16 @@ import {getCustomer360View} from './getCustomer360View';
 export default (state, {dispatch}) => {
 	const {userResult, status, locationResult, companyResult} = state;
 
-	if (status == LOADED_SUCCESSFULLY) {
+	if (status === LOADED_SUCCESSFULLY) {
 		return getCustomer360View(
 			userResult,
 			locationResult,
 			companyResult,
 			dispatch
 		);
-	} else if (status == NO_DATA_AVAILABLE) {
+	} else if (status === NO_DATA_AVAILABLE) {
 		return getNoDataAvailableView();
-	} else if (status == LOADING_DATA) {
+	} else if (status === LOADING_DATA) {
 		return getLoadingDataView();
 	}
 };

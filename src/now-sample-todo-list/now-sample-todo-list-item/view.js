@@ -15,10 +15,11 @@ export default (state, {dispatch}) => {
 			</span>
 			<label className={itemClass}>{itemLabel}</label>
 			<now-button
+				bare={true}
 				cta="Positive"
-				iconName=""
+				iconName="circle-close-outline"
 				iconSet="solid"
-				label="X"
+				label=""
 				size="sm"
 				variant="secondary"></now-button>
 		</div>

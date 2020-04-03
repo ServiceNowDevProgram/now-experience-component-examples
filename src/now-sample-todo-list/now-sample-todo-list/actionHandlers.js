@@ -3,10 +3,7 @@ import createHandlers from './action-handlers/create';
 import updateHandlers from './action-handlers/update';
 import deleteHandlers from './action-handlers/delete';
 
-import {
-	SHOW_MODAL,
-	NOW_ALERT_ACTION_CLICKED
-} from '../constants';
+import {SHOW_MODAL, NOW_ALERT_ACTION_CLICKED} from '../constants';
 
 export default {
 	...fetchHandlers,
