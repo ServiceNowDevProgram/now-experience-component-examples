@@ -5,7 +5,7 @@ import '@servicenow/now-avatar';
 import '@servicenow/now-label-value';
 
 import styles from './styles.scss';
-import view from './view/view';
+import view from './view';
 import actionHandlers from './actionHandlers';
 import {LOADING_DATA} from './constants';
 

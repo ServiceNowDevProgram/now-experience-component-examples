@@ -1,7 +1,13 @@
 import {ARTICLE} from '../constants';
 
 const trimArticleBody = function (articleBody) {
-	return articleBody ? <div>{articleBody.substring(0, 102)}</div> : null;
+	if (articleBody)
+		return articleBody
+			.replace(/<([^>]+)>/g, '')
+			.replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(dec))
+			.substring(0, 102);
+
+	return null;
 };
 
 export default state => {
