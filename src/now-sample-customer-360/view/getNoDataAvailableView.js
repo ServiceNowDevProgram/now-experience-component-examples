@@ -5,14 +5,11 @@ import {NO_DATA_AVAILABLE, CUSTOMER360} from '../constants';
  */
 export const getNoDataAvailableView = () => {
 	return (
-		<div className="customer360-caller">
-			<span className="customer360-caller-header">
-				<span>{CUSTOMER360}</span>
-			</span>
-			<div className="no-data-available">
+		<div className="now-customer-360">
+			<span className="now-customer-360-caller-header">{CUSTOMER360}</span>
+			<div className="now-customer-360-no-data-available">
 				<now-icon icon="circle-info-outline" size="xl"></now-icon>
-				<br />
-				<label>{NO_DATA_AVAILABLE}</label>
+				<div>{NO_DATA_AVAILABLE}</div>
 			</div>
 		</div>
 	);

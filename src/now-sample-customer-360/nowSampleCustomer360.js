@@ -7,16 +7,16 @@ import '@servicenow/now-label-value';
 import styles from './styles.scss';
 import view from './view';
 import actionHandlers from './actionHandlers';
-import {LOADING_DATA} from './constants';
+import {LOADING_DATA, TAG_CUSTOMER_360} from './constants';
 
-createCustomElement('now-sample-customer-360', {
+createCustomElement(TAG_CUSTOMER_360, {
 	renderer: {type: snabbdom},
 	view,
 	initialState: {
-		userResult: null,
+		userResult: {},
 		status: LOADING_DATA,
-		locationResult: null,
-		companyResult: null
+		locationResult: {},
+		companyResult: {}
 	},
 	properties: {
 		table: {

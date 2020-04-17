@@ -1,0 +1,43 @@
+@import '@servicenow/sass-kit/host';
+
+.now-todo-list-item {
+	display: flex;
+	padding: 20px 10px;
+	border-bottom: 1px solid RGB($now-color--category-gray-0);
+	text-align: left;
+
+	label {
+		padding: 0px 10px;
+		width: 90%;
+		font-size: $now-global-font-size--md;
+
+		&.checked {
+			text-decoration: line-through;
+		}
+	}
+
+	&:hover {
+		background-color: RGB($now-color--category-gray-0);
+	}
+
+	.now-todo-list-item-checkbox {
+		display: inline-block;
+		cursor: pointer;
+		border: 1px solid RGB($now-color--category-gray-1);
+		width: 20px;
+		height: 20px;
+		border-radius: $now-global-border-radius--md;
+	}
+
+	.now-todo-list-item-checkbox .checked:before {
+		content: '✓';
+		display: inline-block;
+		font-size: $now-global-font-size--md;
+		color: RGB($now-color--brand-2);
+		padding-left: 1px;
+	}
+
+	.now-todo-list-item-checkbox:hover {
+		box-shadow: $now-global-drop-shadow--md;
+	}
+}

@@ -5,10 +5,8 @@ import {LOADING_DATA} from '../constants';
  */
 export const getLoadingDataView = () => {
 	return (
-		<div className="customer360-caller">
-			<div className="loading-data">
-				<label>{LOADING_DATA}</label>
-			</div>
+		<div className="now-customer-360">
+			<div className="now-customer-360-loading-data ">{LOADING_DATA}</div>
 		</div>
 	);
 };

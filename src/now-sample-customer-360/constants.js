@@ -26,14 +26,14 @@ export const COMPANY_FETCH = 'COMPANY_FETCH';
 export const COMPANY_TABLE = 'core_company';
 export const LOCATION_TABLE = 'cmn_location';
 
-export const LOCATION_FETCH_ERROR = 'LOCATION_FETCH_ERROR';
-export const COMPANY_FETCH_ERROR = 'COMPANY_FETCH_ERROR';
 export const LOCATION_FETCH_SUCCESS = 'LOCATION_FETCH_SUCCESS';
-
 export const COMPANY_FETCH_SUCCESS = 'COMPANY_FETCH_SUCCESS';
+
 export const USER_TABLE = 'sys_user';
 export const CUSTOMER360 = 'Customer 360';
 
 export const CALLER = 'Caller';
 export const PREVIEW_RECORD = 'PREVIEW_RECORD';
 export const OPEN_USER_DETAILS = 'OPEN_USER_DETAILS';
+
+export const TAG_CUSTOMER_360 = 'now-sample-customer-360';

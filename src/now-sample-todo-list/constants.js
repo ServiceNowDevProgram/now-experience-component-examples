@@ -32,8 +32,6 @@ export const NOW_MODAL_FOOTER_ACTION_CLICKED =
 export const NOW_MODAL_OPENED_SET = 'NOW_MODAL#OPENED_SET';
 
 export const SHOW_MODAL = 'SHOW_MODAL';
-export const MODAL_EVENT_CONTINUE = 'MODAL_EVENT_CONTINUE';
-export const MODAL_EVENT_CANCEL = 'MODAL_EVENT_CANCEL';
 export const CLOSE_ALERT = 'CLOSE_ALERT';
 export const CURRENT_USER_ASSIGNMENT = 'javascript:gs.getUserID()';
 
@@ -54,8 +52,7 @@ export const MESSAGE_DELETE_TO_DO_MODAL_BODY =
 	'You are trying to delete a To-Do. Click Ok to continue.';
 export const MESSAGE_DELETE_TO_DO_MODAL_HEADER = 'Deleting To-Do!';
 
-export const MEESSAGE_TODO_LIST_EMPTY =
-	'There are no To-Dos to display. Create now';
+export const MEESSAGE_TODO_LIST_EMPTY = 'There are no To-Dos to display';
 export const MESSAGE_FETCH_FAILED = 'Failed to fetch To-Dos. Try again.';
 export const MESSAGE_CREATE_FAILED = 'Failed to create To-Do. Try again.';
 export const MESSAGE_UPDATE_FAILED = 'Failed to update To-Do. Try again.';
@@ -67,6 +64,15 @@ export const URL_CREATE_TO_DO =
 export const URL_UPDATE_TO_DO = '/api/now/table/vtb_task/:id';
 export const URL_DELETE_TO_DO = '/api/now/table/vtb_task/:id';
 
+export const TAG_SN_MODAL = 'sn-modal';
+export const CANCEL = 'Cancel';
+export const OK = 'Ok';
+
+export const TO_DO_LIST = 'To-Do List';
+export const ADD_A_TO_DO = 'Add a to-do...';
+export const TAG_NOW_SAMPLE_TO_DO_LIST = 'now-sample-todo-list';
+
+export const TAG_NOW_SAMPLE_TODO_LIST_ITEM = 'now-sample-todo-list-item';
 export const CURRENT_USER_GRAPH_QL_QUERY = `
 query {
     GlideDomain_Query {

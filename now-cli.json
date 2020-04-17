@@ -1,9 +1,9 @@
 {
   "development": {
     "proxy": {
-      "origin": "https://k8s0054400-node1.sdthunder.lab3.service-now.com/",
+      "origin": "<Servicenow instance>",
       "headers": {
-        "Authorization": "Basic YWRtaW46YWRtaW4="
+        "Authorization": "Basic <base 64 encoded username:password>"
       },
       "proxies": ["/api"]
     },

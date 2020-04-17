@@ -1,5 +1,4 @@
 import {actionTypes} from '@servicenow/ui-core';
-
 import {getHttpEffect} from './getHttpEffect';
 import {
 	INCIDENT_FETCH_REQUESTED,
@@ -24,43 +23,46 @@ import {
 } from './constants';
 
 export default {
+	[actionTypes.COMPONENT_BOOTSTRAPPED]: ({dispatch, updateState, state}) => {
+		const {
+			properties: {table, sysid}
+		} = state;
+
+		if (table === INCIDENT_TABLE && sysid) {
+			dispatch(INCIDENT_FETCH_REQUESTED, {sysId: sysid, table});
+		} else {
+			updateState({
+				status: NO_DATA_AVAILABLE,
+				reason: PARAM_TABLE_ERROR
+			});
+		}
+	},
 	[INCIDENT_FETCH_REQUESTED]: getHttpEffect({
-		//Fetch Incident.
 		successActionType: INCIDENT_FETCH_SUCCESS,
 		errorActionType: INCIDENT_FETCH_ERROR
 	}),
-
-	[INCIDENT_FETCH_SUCCESS]: coeffects => {
-		//Ftech user when fetch Incident is successfull.
+	[INCIDENT_FETCH_SUCCESS]: ({updateState, dispatch, action}) => {
 		const {
-			action: {
-				payload: {result}
-			},
-			dispatch,
-			updateState
-		} = coeffects;
-		if (
-			result !== null &&
-			result.caller_id !== null &&
-			result.caller_id.value !== null
-		) {
+			payload: {result}
+		} = action;
+
+		if (result && result.caller_id && result.caller_id.value) {
 			dispatch(USER_FETCH_REQUESTED, {
 				sysId: result.caller_id.value,
 				table: USER_TABLE
 			});
 		} else {
-			let userResult = null;
-			let reason = INCIDENT_FETCH_ERROR;
-			let status = NO_DATA_AVAILABLE;
-
-			updateState({status, userResult, reason});
+			updateState({
+				status: NO_DATA_AVAILABLE,
+				reason: INCIDENT_FETCH_ERROR
+			});
 		}
 	},
 
 	[USER_FETCH_REQUESTED]: getHttpEffect({
 		successActionType: USER_FETCH_SUCCESS,
 		errorActionType: USER_FETCH_ERROR
-	}), //Fetch User.
+	}),
 
 	[USER_FETCH_SUCCESS]: coeffects => {
 		const {
@@ -70,107 +72,66 @@ export default {
 			dispatch,
 			updateState
 		} = coeffects;
-		let status = LOADED_SUCCESSFULLY;
 
-		let location = result.location.value;
-		if (location !== undefined && location !== '') {
-			//Dispatch action for fetching location.
-			dispatch(LOCATION_FETCH, {sysId: location, table: LOCATION_TABLE});
-		}
+		if (!result) {
+			updateState({
+				status: NO_DATA_AVAILABLE,
+				reason: USER_FETCH_ERROR
+			});
+		} else {
+			const location = result.location && result.location.value;
+			if (location)
+				dispatch(LOCATION_FETCH, {sysId: location, table: LOCATION_TABLE});
 
-		let company = result.company.value;
-		if (company !== undefined && company !== '') {
-			//Dispatch action for fetching company.
-			dispatch(COMPANY_FETCH, {sysId: company, table: COMPANY_TABLE});
+			const company = result.company && result.company.value;
+			if (company)
+				dispatch(COMPANY_FETCH, {sysId: company, table: COMPANY_TABLE});
+
+			updateState({
+				userResult: result,
+				status: LOADED_SUCCESSFULLY
+			});
 		}
-		const userResult = result;
-		updateState({userResult, status});
 	},
-
 	[LOCATION_FETCH]: getHttpEffect({
-		//Fetch Location.
 		successActionType: LOCATION_FETCH_SUCCESS
 	}),
 
 	[COMPANY_FETCH]: getHttpEffect({
-		//Fetch compaany.
 		successActionType: COMPANY_FETCH_SUCCESS
 	}),
-
-	[COMPANY_FETCH_SUCCESS]: coeffects => {
-		// Update the state when company response came.
+	[COMPANY_FETCH_SUCCESS]: ({updateState, action}) => {
 		const {
-			action: {
-				payload: {result}
-			},
-			updateState
-		} = coeffects;
-		let companyResult = result;
-		updateState({companyResult});
+			payload: {result}
+		} = action;
+		if (result) updateState({companyResult: result});
 	},
-
-	[LOCATION_FETCH_SUCCESS]: coeffects => {
-		//Update the state when location response came.
+	[LOCATION_FETCH_SUCCESS]: ({updateState, action}) => {
 		const {
-			action: {
-				payload: {result}
-			},
-			updateState
-		} = coeffects;
-		let locationResult = result;
+			payload: {result}
+		} = action;
 
-		updateState({locationResult});
+		if (result) updateState({locationResult: result});
 	},
-
-	[INCIDENT_FETCH_ERROR]: coeffects => {
-		//Show no data available when fetch incident throw error.
-		let userResult = null;
-		const {updateState} = coeffects;
-		let reason = INCIDENT_FETCH_ERROR;
-		let status = NO_DATA_AVAILABLE;
-
-		updateState({status, userResult, reason});
+	[INCIDENT_FETCH_ERROR]: ({updateState}) => {
+		updateState({
+			status: NO_DATA_AVAILABLE,
+			reason: INCIDENT_FETCH_ERROR
+		});
 	},
-
-	[USER_FETCH_ERROR]: coeffects => {
-		//Show no data available when fetch user throw error.
-		let userResult = null;
-		let status = NO_DATA_AVAILABLE;
-		let reason = USER_FETCH_ERROR;
-
-		const {updateState} = coeffects;
-		updateState({userResult, status, reason});
+	[USER_FETCH_ERROR]: ({updateState}) => {
+		updateState({
+			status: NO_DATA_AVAILABLE,
+			reason: USER_FETCH_ERROR
+		});
 	},
-
-	[OPEN_USER_DETAILS]: coeffects => {
+	[OPEN_USER_DETAILS]: ({state, dispatch}) => {
 		const {
-			dispatch,
-			state: {
-				userResult: {sys_id}
-			}
-		} = coeffects;
-		const table = USER_TABLE;
-		dispatch(PREVIEW_RECORD, {table, sys_id});
-	},
-
-	[actionTypes.COMPONENT_BOOTSTRAPPED]: coeffects => {
-		const {
-			dispatch,
-			updateState,
-			state: {
-				properties: {table, sysid}
-			}
-		} = coeffects;
-
-		let sysId = sysid;
-		if (table === INCIDENT_TABLE && sysId !== null) {
-			dispatch(INCIDENT_FETCH_REQUESTED, {sysId, table});
-		} else {
-			//If the table is not "[INCIDENT_TABLE]", Show the message "No data available..."
-			let userResult = null;
-			let reason = PARAM_TABLE_ERROR;
-			let status = NO_DATA_AVAILABLE;
-			updateState({userResult, status, reason});
-		}
+			userResult: {sys_id}
+		} = state;
+		dispatch(PREVIEW_RECORD, {
+			table: USER_TABLE,
+			sys_id
+		});
 	}
 };

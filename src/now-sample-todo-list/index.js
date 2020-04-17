@@ -1,1 +1,1 @@
-import './now-sample-todo-list';
+import './todo-list';
