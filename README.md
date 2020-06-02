@@ -9,7 +9,7 @@
 
 ## Run commponent
 1. Customer 360 - `npm run start:customer-360`
-2. To-do List - `npm run start:to-do-list`
+2. To-do List - `npm run start:todo-list`
 3. Agent Assist - `npm run start:agent-assist`
 
 > Make sure that you running one component at a time.

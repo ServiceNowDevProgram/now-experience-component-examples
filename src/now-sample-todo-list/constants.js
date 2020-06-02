@@ -73,15 +73,4 @@ export const ADD_A_TO_DO = 'Add a to-do...';
 export const TAG_NOW_SAMPLE_TO_DO_LIST = 'now-sample-todo-list';
 
 export const TAG_NOW_SAMPLE_TODO_LIST_ITEM = 'now-sample-todo-list-item';
-export const CURRENT_USER_GRAPH_QL_QUERY = `
-query {
-    GlideDomain_Query {
-        user {
-            sys_id
-            userName
-            firstName
-            lastName
-            fullName
-        }
-    }
-}`;
+export const FETCH_CURRENT_USER = 'api/now/ui/user/current_user';

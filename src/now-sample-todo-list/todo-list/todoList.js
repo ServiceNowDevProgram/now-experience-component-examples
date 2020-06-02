@@ -17,7 +17,8 @@ createCustomElement(TAG_NOW_SAMPLE_TO_DO_LIST, {
 		showProgress: false,
 		progressMessage: '',
 		modal: null,
-		alert: null
+		alert: null,
+		userSysId: ''
 	},
 	properties: {
 		activeToDos: {
