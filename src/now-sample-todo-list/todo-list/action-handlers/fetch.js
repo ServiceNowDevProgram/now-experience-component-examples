@@ -54,19 +54,17 @@ export default {
 
 	[USER_FETCH_SUCCESS]: ({
 		action: {
-			payload: {data}
+			payload: {result = {}}
 		},
 		dispatch,
 		updateState
 	}) => {
-		const {
-			GlideDomain_Query: {user}
-		} = data;
-		if (user && user.sys_id) {
-			updateState({user});
+		const {user_sys_id: userSysId} = result;
+		if (userSysId) {
+			updateState({userSysId});
 			dispatch(FETCH_TODO_REQUESTED, {
 				sysparm_fields: 'sys_id,short_description,active,assigned_to',
-				sysparm_query: `assigned_to=${user.sys_id}^ORDERBYsys_created_on`,
+				sysparm_query: `assigned_to=${userSysId}^ORDERBYsys_created_on`,
 				sysparm_exclude_reference_link: true
 			});
 		} else {

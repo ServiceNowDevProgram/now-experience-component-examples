@@ -1,5 +1,4 @@
 import {createHttpEffect} from '@servicenow/ui-effect-http';
-import {createGraphQLEffect} from '@servicenow/ui-effect-graphql';
 
 import {
 	FETCH_TODO_SUCCESS,
@@ -14,7 +13,7 @@ import {
 	URL_CREATE_TO_DO,
 	URL_UPDATE_TO_DO,
 	URL_DELETE_TO_DO,
-	CURRENT_USER_GRAPH_QL_QUERY
+	FETCH_CURRENT_USER
 } from '../constants';
 
 export const fetchToDosEffect = createHttpEffect(URL_FETCH_TO_DOS, {
@@ -56,9 +55,10 @@ export const deleteToDoEffect = createHttpEffect(URL_DELETE_TO_DO, {
 	errorActionType: DELETE_TODO_ERROR
 });
 
-export const getCurrentUserEffect = createGraphQLEffect(
-	CURRENT_USER_GRAPH_QL_QUERY,
+export const getCurrentUserEffect = createHttpEffect(
+	FETCH_CURRENT_USER,
 	{
+		method: 'GET',
 		successActionType: 'USER_FETCH_SUCCESS',
 		errorActionType: 'USER_FETCH_ERROR'
 	}

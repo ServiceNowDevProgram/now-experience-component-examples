@@ -28,8 +28,7 @@
         "@servicenow/ui-renderer-snabbdom": "orlando",
         "@servicenow/now-button": "orlando",
         "@servicenow/now-alert": "orlando",
-        "@servicenow/now-toggle": "orlando",
-        "@servicenow/ui-effect-graphql": "orlando"
+        "@servicenow/now-toggle": "orlando"
     },
     "devDependencies": {
         "@servicenow/cli-archetype-dev": "orlando",

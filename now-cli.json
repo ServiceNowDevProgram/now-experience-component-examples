@@ -2,9 +2,6 @@
   "development": {
     "proxy": {
       "origin": "<Servicenow instance>",
-      "headers": {
-        "Authorization": "Basic <base 64 encoded username:password>"
-      },
       "proxies": ["/api"]
     },
     "test": {

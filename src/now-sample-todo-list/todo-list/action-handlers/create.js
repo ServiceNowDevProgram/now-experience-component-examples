@@ -19,7 +19,7 @@ export default {
 		dispatch(CREATE_TODO_REQUESTED, {
 			data: {
 				short_description: state.todoInputValue,
-				assigned_to: state.user.sys_id
+				assigned_to: state.userSysId
 			}
 		});
 	},
