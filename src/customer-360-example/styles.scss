@@ -1,0 +1,45 @@
+@import '@servicenow/sass-kit/host';
+
+:host {
+	height: 100%;
+}
+.customer-360 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: now-fn-px2rem(480px);
+	height: inherit;
+	border: 1px solid RGB($now-color--divider-secondary);
+	padding: $now-global-space--md;
+	background-color: RGB($now-color--background-primary);
+	header {
+		width: 100%;
+		padding-left: $now-global-space--sm;
+		border-bottom: 1px solid RGB($now-color--divider-secondary);
+	}
+	.no-data {
+		display: grid;
+		justify-content: center;
+		justify-items: center;
+		grid-gap: $now-global-space--md;
+	}
+	.customer-details {
+		display: grid;
+		grid-template-columns: now-fn-px2rem(80px) now-fn-px2rem(360px);
+		grid-gap: $now-global-space--md;
+		padding: $now-global-space--md 0px;
+		.caller-avatar {
+			text-align: center;
+			cursor: pointer;
+			grid-row: 1/3;
+		}
+		now-heading {
+			cursor: pointer;
+			align-self: center;
+			margin-top: $now-global-space--sm;
+		}
+		now-label-value-stacked {
+			grid-column: 2/3;
+		}
+	}
+}

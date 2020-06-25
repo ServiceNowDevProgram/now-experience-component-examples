@@ -1,20 +1,9 @@
 {
   "development": {
     "proxy": {
-      "origin": "<Servicenow instance>",
+      "origin": "https://<your-instance>.com",
+      "port": 3000,
       "proxies": ["/api"]
-    },
-    "test": {
-        "unit": [
-            "@servicenow/cli-jest-plugin"
-        ]
     }
-  },
-  "styles": {
-      "themes": [{
-        "module": "@servicenow/sass-theme",
-        "main": ["theme.scss"],
-        "copyFiles": ["type/*", "*.scss"]
-      }]
   }
 }

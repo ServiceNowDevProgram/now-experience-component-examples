@@ -1,0 +1,15 @@
+:host {
+	display: block;
+}
+
+.card {
+	height: 100px;
+	border: 1px solid #2e2e2e;
+	margin: 0 auto 10px auto;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 5px;
+}

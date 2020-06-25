@@ -1,0 +1,32 @@
+$color-blue: #217ac0;
+$color-black: black;
+$color-white: white;
+
+.card {
+	width: 300px;
+	padding: 10px;
+	margin: 10px;
+	border: 1px;
+	border-color: $color-black;
+	border-style: solid;
+	border-radius: 5px;
+
+	.card-title {
+		font-weight: bold;
+		color: $color-blue;
+		margin-right: 10px;
+		font-size: 20px;
+	}
+	.card-attributes {
+		h4 > span {
+			padding: 2px 5px;
+			color: $color-white;
+			background: $color-blue;
+			border-radius: 5px;
+		}
+	}
+}
+
+::slotted(dl) {
+	padding-left: 10px;
+}
