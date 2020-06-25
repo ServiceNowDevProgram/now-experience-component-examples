@@ -1,22 +1,25 @@
 {
 	"components": {
-		"now-sample-agent-assist" : {
+		"example-agent-assist" : {
 			"innerComponents": [
 				"now-icon",
-				"now-loader"
+				"now-loader",
+				"now-heading"
 			]
 		},
-	    "now-sample-customer-360": {
+	    "example-customer-360": {
 			"innerComponents": [
 				"now-avatar",
 				"now-icon",
-				"now-label-value-stacked"
+				"now-label-value-stacked",
+				"now-label-value-inline",
+				"now-heading"
 			],
 			"properties": [
 				{
 				  "name": "table",
 				  "label": "table",
-				  "description": "Name of the table to post the new journal entry to",
+				  "description": "Name of the table to pick caller from",
 				  "readOnly": false,
 				  "fieldType": "table_name",
 				  "required": true,
@@ -35,25 +38,26 @@
 				}
 			]
 		},
-		"now-sample-todo-list" : {
+		"example-checklist" : {
 			"uiBuilder": {
-				"label": "To-Do List",
+				"label": "Checklist",
 				"icon": "list-fill",
-				"description": "Logged in users can manage their to-dos",
+				"description": "Logged in users can manage their tasks",
 				"category": "primitives",
 				"associatedTypes": [
 					"global.core"
 				]
 			},
 	        "innerComponents": [
+				"now-heading",
+				"now-loader",
 				"now-button",
-				"now-alert",
 				"now-toggle",
-				"sn-todo-list-item",
-				"sn-modal"
+				"example-checklist-item",
+				"now-label-value-inline",
+				"now-button-iconic"
 			]
 		}	
 	},
-	"scopeName": "x_now_smpl_ex_cmp"
+	"scopeName": "x_now_components"
 }
-

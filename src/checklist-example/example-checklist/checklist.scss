@@ -1,0 +1,53 @@
+@import '@servicenow/sass-kit/host';
+
+:host {
+	display: block;
+}
+
+.now-checklist {
+	max-width: now-fn-px2rem(800px);
+	margin: $now-global-space--md auto;
+	padding: $now-global-space--xxl;
+	box-shadow: $now-global-drop-shadow--md;
+	background-color: RGB($now-color--background-primary);
+	now-loader {
+		margin-top: $now-global-space--md;
+	}
+}
+
+.now-checklist-input {
+	display: block;
+	width: 100%;
+	margin-bottom: $now-global-space--lg;
+	padding: $now-global-space--md;
+	font-size: $now-global-font-size--lg;
+	font-family: inherit;
+}
+
+.now-checklist-thead {
+	display: grid;
+	grid-template-columns: now-fn-px2rem(120px) 1fr;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: RGB($now-color--divider-secondary);
+}
+
+.now-checklist-th {
+	padding-right: $now-global-space--sm;
+	padding-bottom: $now-global-space--sm;
+	padding-left: $now-global-space--sm;
+	font-weight: bold;
+
+	&.-center {
+		text-align: center;
+	}
+}
+
+.now-checklist-footer {
+	display: flex;
+	align-items: center;
+}
+
+.now-checklist-button {
+	@include now-mx-rtl-property(margin-left, auto);
+}

@@ -14,29 +14,33 @@
         "npm": ">=5.3.0"
     },
     "module": "src/index.js",
+    "scripts": {
+        "start:agentAssistExample": "now-cli develop --open --entry=./agentAssist.js",
+        "start:counterExample": "now-cli develop --open --entry=./counter.js",
+        "start:checklistExample": "now-cli develop --open --entry=./checklist.js",
+        "start:customer360Example": "now-cli develop --open --entry=./customer360.js",
+        "start:flashCardExample": "now-cli develop --open --entry=./flashCard.js",
+        "start:taskBoardExample": "now-cli develop --open --entry=./taskBoard.js"
+    },
     "dependencies": {
-        "@servicenow/cli-archetype": "orlando",
-        "@servicenow/cli-component-archetype": "orlando",
+        "@servicenow/behavior-rtl": "orlando",
         "@servicenow/now-avatar": "orlando",
+        "@servicenow/now-heading": "orlando",
         "@servicenow/now-icon": "orlando",
         "@servicenow/now-label-value": "orlando",
         "@servicenow/sass-kit": "orlando",
         "@servicenow/sass-theme": "orlando",
-        "@servicenow/ui-core": "orlando",
         "@servicenow/now-loader": "orlando",
+        "@servicenow/now-button": "orlando",
+        "@servicenow/now-toggle": "orlando",
+        "@servicenow/ui-core": "orlando",
         "@servicenow/ui-effect-http": "orlando",
         "@servicenow/ui-renderer-snabbdom": "orlando",
-        "@servicenow/now-button": "orlando",
-        "@servicenow/now-alert": "orlando",
-        "@servicenow/now-toggle": "orlando"
+        "@servicenow/cli-archetype": "orlando",
+        "@servicenow/cli-component-archetype": "orlando"
     },
     "devDependencies": {
         "@servicenow/cli-archetype-dev": "orlando",
         "@servicenow/cli-component-archetype-dev": "orlando"
-    },
-    "scripts": {
-        "start:customer-360": "now-cli develop --open --entry=./customer-360",
-        "start:agent-assist": "now-cli develop --open --entry=./agent-assist",
-        "start:todo-list": "now-cli develop --open --entry=./to-do-list"
     }
 }

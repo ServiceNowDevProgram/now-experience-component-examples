@@ -1,0 +1,26 @@
+@import '@servicenow/sass-kit/host';
+
+article {
+	border-radius: $now-global-border-radius--sm;
+	border: 1px solid RGB($now-color--divider-primary);
+	margin: $now-global-space--sm 0px;
+	padding: $now-global-space--md;
+	header {
+		display: grid;
+		grid-template-columns: now-fn-px2rem(30px) auto;
+		align-items: center;
+		span {
+			color: RGB($now-color--text-secondary);
+		}
+		now-heading {
+			margin-top: $now-global-space--md;
+			grid-column: 1 / span 2;
+		}
+	}
+	summary {
+		white-space: normal;
+		margin-top: $now-global-space--xs;
+		color: RGB($now-color--text-tertiary);
+		font-size: $now-global-font-size--sm;
+	}
+}

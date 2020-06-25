@@ -1,3 +1,6 @@
-import './now-sample-customer-360';
-import './now-sample-todo-list';
-import './now-sample-agent-assist';
+import './agent-assist-example';
+import './checklist-example';
+import './counter-example';
+import './customer-360-example';
+import './flash-card-example';
+import './task-board-example';

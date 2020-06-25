@@ -1,0 +1,37 @@
+@import '@servicenow/sass-kit/host';
+
+:host {
+	display: block;
+}
+
+.now-checklist-item {
+	display: grid;
+	align-items: center;
+	grid-template-columns: now-fn-px2rem(120px) 1fr now-fn-px2rem(32px);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: RGB($now-color--divider-secondary);
+}
+
+.now-checklist-item-cell {
+	display: flex;
+	padding: $now-global-space--sm;
+
+	&:first-child {
+		border-right-width: 1px;
+		border-right-style: solid;
+		border-right-color: RGB($now-color--divider-secondary);
+	}
+
+	&.-center {
+		justify-content: center;
+	}
+}
+
+.now-checklist-item-input {
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	line-height: inherit;
+	font-family: inherit;
+}
