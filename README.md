@@ -18,7 +18,7 @@
     npm install
     ```
 
-4. Add your instance host address to `development.proxy.origin` in the `now-ui.json` and authenticate using `now-cli login` command.
+4. Add your instance host address to `development.proxy.origin` in the `now-cli.json` and authenticate using `now-cli login` command.
 
 ## Run examples
 
