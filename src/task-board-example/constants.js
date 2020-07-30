@@ -17,7 +17,7 @@ export const LANES = [
 export const CARDS = [
 	{
 		cardId: 0,
-		title: 'Read Now Experience UI Framework 101',
+		title: 'Read Main Concepts',
 		lane: 0
 	},
 	{

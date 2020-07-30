@@ -2,10 +2,7 @@ import {createCustomElement} from '@servicenow/ui-core';
 import snabbdom from '@servicenow/ui-renderer-snabbdom';
 import '../example-card';
 import styles from './lane.scss';
-import {
-	dropBehavior,
-	DROPPED
-} from '../behaviors/dragDropBehaviors';
+import {dropBehavior} from '../behaviors/dragDropBehaviors';
 import {CARD_DROPPED} from '../constants';
 import view from './view';
 
@@ -24,17 +21,13 @@ createCustomElement('example-lane', {
 		}
 	},
 	styles,
-	behaviors: [{behavior: dropBehavior}],
-	actionHandlers: {
-		[DROPPED]({
-			properties: {laneId},
-			dispatch,
-			action: {
-				payload: {data}
+	behaviors: [{
+		behavior: dropBehavior,
+		options: {
+			onDrop(card, {dispatch, properties: {laneId}}) {
+				const nextCard = {...card, lane: laneId};
+				dispatch(CARD_DROPPED, nextCard);
 			}
-		}) {
-			const nextCard = {...data, lane: laneId};
-			dispatch(CARD_DROPPED, nextCard);
 		}
-	}
+	}]
 });

@@ -23,24 +23,24 @@
         "start:taskBoardExample": "now-cli develop --open --entry=./taskBoard.js"
     },
     "dependencies": {
-        "@servicenow/behavior-rtl": "orlando",
-        "@servicenow/now-avatar": "orlando",
-        "@servicenow/now-heading": "orlando",
-        "@servicenow/now-icon": "orlando",
-        "@servicenow/now-label-value": "orlando",
-        "@servicenow/sass-kit": "orlando",
-        "@servicenow/sass-theme": "orlando",
-        "@servicenow/now-loader": "orlando",
-        "@servicenow/now-button": "orlando",
-        "@servicenow/now-toggle": "orlando",
-        "@servicenow/ui-core": "orlando",
-        "@servicenow/ui-effect-http": "orlando",
-        "@servicenow/ui-renderer-snabbdom": "orlando",
-        "@servicenow/cli-archetype": "orlando",
-        "@servicenow/cli-component-archetype": "orlando"
+        "@servicenow/behavior-rtl": "paris",
+        "@servicenow/cli-archetype": "paris",
+        "@servicenow/cli-component-archetype": "paris",
+        "@servicenow/now-avatar": "paris",
+        "@servicenow/now-button": "paris",
+        "@servicenow/now-heading": "paris",
+        "@servicenow/now-icon": "paris",
+        "@servicenow/now-label-value": "paris",
+        "@servicenow/now-loader": "paris",
+        "@servicenow/now-toggle": "paris",
+        "@servicenow/sass-kit": "paris",
+        "@servicenow/sass-theme": "paris",
+        "@servicenow/ui-core": "paris",
+        "@servicenow/ui-effect-http": "paris",
+        "@servicenow/ui-renderer-snabbdom": "paris"
     },
     "devDependencies": {
-        "@servicenow/cli-archetype-dev": "orlando",
-        "@servicenow/cli-component-archetype-dev": "orlando"
+        "@servicenow/cli-archetype-dev": "paris",
+        "@servicenow/cli-component-archetype-dev": "paris"
     }
 }

@@ -15,14 +15,10 @@ export const dropBehavior = {
 		},
 		{
 			events: ['drop'],
-			effect({
-				dispatch,
-				action: {
-					payload: {event}
-				}
-			}) {
+			effect(coeffects) {
+				const {action: {payload: {options, event}}} = coeffects;
 				const data = JSON.parse(event.dataTransfer.getData('application/json'));
-				dispatch(DROPPED, {data});
+				options.onDrop(data, coeffects);
 			}
 		}
 	]
@@ -40,12 +36,8 @@ export const dragBehavior = {
 		{
 			events: ['dragstart'],
 			effect(coeffects) {
-				const {
-					state: {getData},
-					action: {payload: {event}}
-				} = coeffects;
-
-				const data = getData(coeffects);
+				const {action: {payload: {options, event}}} = coeffects;
+				const data = options.getData(coeffects);
 				event.dataTransfer.setData('application/json', JSON.stringify(data));
 			}
 		}
