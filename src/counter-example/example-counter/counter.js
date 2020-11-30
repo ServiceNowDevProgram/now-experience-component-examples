@@ -6,8 +6,10 @@ import view from './view';
 createCustomElement('example-counter', {
 	renderer: {type: snabbdom},
 	view,
-	initialState: {
-		tally: 0
+	setInitialState() {
+		return {
+			tally: 0
+		};
 	},
 	styles: style
 });

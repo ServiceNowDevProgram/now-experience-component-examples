@@ -9,11 +9,13 @@ import actionHandlers from './actionHandlers';
 createCustomElement('example-customer-360', {
 	renderer: {type: snabbdom},
 	view,
-	initialState: {
-		userResult: {},
-		isLoading: true,
-		locationResult: {},
-		companyResult: {}
+	setInitialState() {
+		return {
+			userResult: {},
+			isLoading: true,
+			locationResult: {},
+			companyResult: {}
+		};
 	},
 	properties: {
 		table: {

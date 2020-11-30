@@ -8,8 +8,10 @@ import styles from './card-list.scss';
 createCustomElement('example-card-list', {
 	renderer: {type: snabbdom},
 	view,
-	initialState: {
-		cards: CARDS
+	setInitialState() {
+		return {
+			cards: CARDS
+		};
 	},
 	styles
 });

@@ -23,24 +23,24 @@
         "start:taskBoardExample": "now-cli develop --open --entry=./taskBoard.js"
     },
     "dependencies": {
-        "@servicenow/behavior-rtl": "paris",
-        "@servicenow/cli-archetype": "paris",
-        "@servicenow/cli-component-archetype": "paris",
-        "@servicenow/now-avatar": "paris",
-        "@servicenow/now-button": "paris",
-        "@servicenow/now-heading": "paris",
-        "@servicenow/now-icon": "paris",
-        "@servicenow/now-label-value": "paris",
-        "@servicenow/now-loader": "paris",
-        "@servicenow/now-toggle": "paris",
-        "@servicenow/sass-kit": "paris",
-        "@servicenow/sass-theme": "paris",
-        "@servicenow/ui-core": "paris",
-        "@servicenow/ui-effect-http": "paris",
-        "@servicenow/ui-renderer-snabbdom": "paris"
+        "@servicenow/behavior-rtl": "rome",
+        "@servicenow/cli-archetype": "rome",
+        "@servicenow/cli-component-archetype": "rome",
+        "@servicenow/now-avatar": "rome",
+        "@servicenow/now-button": "rome",
+        "@servicenow/now-heading": "rome",
+        "@servicenow/now-icon": "rome",
+        "@servicenow/now-label-value": "rome",
+        "@servicenow/now-loader": "rome",
+        "@servicenow/now-toggle": "rome",
+        "@servicenow/sass-kit": "rome",
+        "@servicenow/sass-theme": "rome",
+        "@servicenow/ui-core": "rome",
+        "@servicenow/ui-effect-http": "rome",
+        "@servicenow/ui-renderer-snabbdom": "rome"
     },
     "devDependencies": {
-        "@servicenow/cli-archetype-dev": "paris",
-        "@servicenow/cli-component-archetype-dev": "paris"
+        "@servicenow/cli-archetype-dev": "rome",
+        "@servicenow/cli-component-archetype-dev": "rome"
     }
 }

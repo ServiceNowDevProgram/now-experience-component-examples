@@ -8,10 +8,12 @@ createCustomElement('example-agent-assist', {
 	renderer: {type: snabbdom},
 	view,
 	styles,
-	initialState: {
-		searchString: null,
-		isLoading: false,
-		result: []
+	setInitialState() {
+		return {
+			searchString: null,
+			isLoading: false,
+			result: []
+		};
 	},
 	properties: {
 		fields: {

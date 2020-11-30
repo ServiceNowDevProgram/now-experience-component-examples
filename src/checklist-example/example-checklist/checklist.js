@@ -9,11 +9,13 @@ import {FILTER} from '../constants';
 createCustomElement('example-checklist', {
 	renderer: {type: snabbdom},
 	view,
-	initialState: {
-		inputValue: '',
-		userSysId: '',
-		items: [],
-		isLoading: false
+	setInitialState() {
+		return {
+			inputValue: '',
+			userSysId: '',
+			items: [],
+			isLoading: false
+		};
 	},
 	properties: {
 		itemsLeft: {

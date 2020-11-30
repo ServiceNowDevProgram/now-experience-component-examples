@@ -8,9 +8,11 @@ import {LANES, CARDS} from '../constants';
 createCustomElement('example-task-board', {
 	renderer: {type: snabbdom},
 	view,
-	initialState: {
-		lanes: LANES,
-		cards: CARDS
+	setInitialState() {
+		return {
+			lanes: LANES,
+			cards: CARDS
+		};
 	},
 	styles,
 	...taskBoardActions
