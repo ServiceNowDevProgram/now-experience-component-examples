@@ -23,24 +23,24 @@
         "start:taskBoardExample": "now-cli develop --open --entry=./taskBoard.js"
     },
     "dependencies": {
-        "@servicenow/behavior-rtl": "paris",
-        "@servicenow/cli-archetype": "paris",
-        "@servicenow/cli-component-archetype": "paris",
-        "@servicenow/now-avatar": "paris",
-        "@servicenow/now-button": "paris",
-        "@servicenow/now-heading": "paris",
-        "@servicenow/now-icon": "paris",
-        "@servicenow/now-label-value": "paris",
-        "@servicenow/now-loader": "paris",
-        "@servicenow/now-toggle": "paris",
-        "@servicenow/sass-kit": "paris",
-        "@servicenow/sass-theme": "paris",
-        "@servicenow/ui-core": "paris",
-        "@servicenow/ui-effect-http": "paris",
-        "@servicenow/ui-renderer-snabbdom": "paris"
+        "@servicenow/behavior-rtl": "quebec",
+        "@servicenow/cli-archetype": "quebec",
+        "@servicenow/cli-component-archetype": "quebec",
+        "@servicenow/now-avatar": "quebec",
+        "@servicenow/now-button": "quebec",
+        "@servicenow/now-heading": "quebec",
+        "@servicenow/now-icon": "quebec",
+        "@servicenow/now-label-value": "quebec",
+        "@servicenow/now-loader": "quebec",
+        "@servicenow/now-toggle": "quebec",
+        "@servicenow/sass-kit": "quebec",
+        "@servicenow/sass-theme": "quebec",
+        "@servicenow/ui-core": "quebec",
+        "@servicenow/ui-effect-http": "quebec",
+        "@servicenow/ui-renderer-snabbdom": "quebec"
     },
     "devDependencies": {
-        "@servicenow/cli-archetype-dev": "paris",
-        "@servicenow/cli-component-archetype-dev": "paris"
+        "@servicenow/cli-archetype-dev": "quebec",
+        "@servicenow/cli-component-archetype-dev": "quebec"
     }
 }
